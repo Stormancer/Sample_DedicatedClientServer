@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\Plugins">
+      <UniqueIdentifier>{b31897f1-70a2-4f3e-9c73-b73076e7f450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Plugins">
+      <UniqueIdentifier>{8e1f2b6b-e724-449a-a8ac-3a069a9845f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="online\GameSessionServiceP2P.h">
+      <Filter>Fichiers d%27en-tête\Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="online\GameSessionPluginP2P.h">
+      <Filter>Fichiers d%27en-tête\Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationPlugin.h">
+      <Filter>Fichiers d%27en-tête\Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationService.h">
+      <Filter>Fichiers d%27en-tête\Plugins</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="online\GameSessionPluginP2P.cpp">
+      <Filter>Fichiers sources\Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="online\GameSessionServiceP2P.cpp">
+      <Filter>Fichiers sources\Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationPlugin.cpp">
+      <Filter>Fichiers sources\Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationService.cpp">
+      <Filter>Fichiers sources\Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample_DedicatedClientServer.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
