@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample_DedicatedClientServer", "Sample_DedicatedClientServer\Sample_DedicatedClientServer.vcxproj", "{965EFCE1-4718-4B48-8B19-E5455FD9E073}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9639F009-90B4-49C8-BAD4-472324B6F923}"
+	ProjectSection(SolutionItems) = preProject
+		Stormancer.props = Stormancer.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
