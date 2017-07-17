@@ -7,7 +7,7 @@
 #include "AuthenticationPlugin.h"
 
 pplx::task<void> runClient(std::shared_ptr<Stormancer::Client> client, std::string ticket);
-pplx::task<void> runServer(std::shared_ptr<Stormancer::Client> client, std::string connectionToken);
+pplx::task<void> runServer(std::shared_ptr<Stormancer::Client> client, std::string connectionToken,bool& isRunning);
 
 
 
@@ -16,7 +16,7 @@ int main()
 {
 	size_t len = 256;
 	char *buffer = new char[256];
-	
+	bool isRunning = true;
 
 	//Get connection token passed as environment variable when the Stormancer app starts the server (Plugins/GameSessions/GameSessionService.cs line 413)
 	auto err_no = _dupenv_s(&buffer,&len,"connectionToken");
@@ -38,10 +38,10 @@ int main()
 	else
 	{
 		
-		runServer(client,std::string(buffer)).wait();
+		runServer(client,std::string(buffer),isRunning).wait();
 	}
 
-	while (true)
+	while (isRunning)
 	{
 		std::this_thread::sleep_for((std::chrono::milliseconds)10);
 	}

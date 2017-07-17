@@ -7,7 +7,8 @@ namespace Stormancer
 {
 	const std::string P2P_SERVER_ID = "IntrepidServer";
 
-	GameSessionServiceP2P::GameSessionServiceP2P(Scene_ptr scene)
+	GameSessionServiceP2P::GameSessionServiceP2P(Scene_ptr scene) :
+		_onShutdownReceived([]() {})
 	{
 		_scene = scene;
 
@@ -15,6 +16,12 @@ namespace Stormancer
 
 		_scene->addRoute("server.started", [this](Packetisp_ptr packet) {
 			this->_waitServerTce.set(packet->readObject<ServerStartedMessage>().p2pToken);
+		});
+		_scene->addRoute("gameSession.shutdown", [this](Packetisp_ptr packet) {
+			if (this->_onShutdownReceived)
+			{
+				this->_onShutdownReceived();
+			}
 		});
 		_scene->addRoute("player.update", [this](Packetisp_ptr packet) {
 			auto update = packet->readObject<Stormancer::PlayerUpdate>();
@@ -82,6 +89,11 @@ namespace Stormancer
 	void GameSessionServiceP2P::OnTunnelOpened(std::function<void(std::shared_ptr<Stormancer::P2PTunnel>)> callback)
 	{
 		_onTunnelOpened = callback;
+	}
+
+	void GameSessionServiceP2P::OnShutdownReceived(std::function<void(void)> callback)
+	{
+		_onShutdownReceived = callback;
 	}
 
 
