@@ -19,6 +19,9 @@
     <Filter Include="Fichiers d%27en-tête\Plugins">
       <UniqueIdentifier>{8e1f2b6b-e724-449a-a8ac-3a069a9845f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Public">
+      <UniqueIdentifier>{dd6ae098-bded-4fb4-bc63-02fdc8a66abc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -36,11 +39,8 @@
     <ClInclude Include="online\GameSessionPluginP2P.h">
       <Filter>Fichiers d%27en-tête\Plugins</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationPlugin.h">
-      <Filter>Fichiers d%27en-tête\Plugins</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationService.h">
-      <Filter>Fichiers d%27en-tête\Plugins</Filter>
+    <ClInclude Include="public\DedicatedServerModule.h">
+      <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,19 +53,19 @@
     <ClCompile Include="online\GameSessionServiceP2P.cpp">
       <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationPlugin.cpp">
-      <Filter>Fichiers sources\Plugins</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\sdks\stormancer-sdk-cpp-ps4\Plugins\AuthenticationService.cpp">
-      <Filter>Fichiers sources\Plugins</Filter>
-    </ClCompile>
     <ClCompile Include="Server.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Client.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Sample_DedicatedClientServer.cpp">
+    <ClCompile Include="DedicatedServerModule.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\AuthenticationPlugin.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\AuthenticationService.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

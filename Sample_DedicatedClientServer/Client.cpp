@@ -3,7 +3,7 @@
 #include "online/GameSessionServiceP2P.h"
 #include "AuthenticationService.h"
 
-pplx::task<void> runClient(std::shared_ptr<Stormancer::Client> client, std::string ticket)
+pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> runClient(std::shared_ptr<Stormancer::Client> client, std::string ticket)
 {
 	auto logger = client->dependencyResolver()->resolve<Stormancer::ILogger>();
 	logger->log(Stormancer::LogLevel::Info, "startup", "starting as client");
@@ -12,7 +12,7 @@ pplx::task<void> runClient(std::shared_ptr<Stormancer::Client> client, std::stri
 
 	auto auth = client->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
 	//Login using the steam auth provider (if configured as "mockup", it accepts any ticket as genuine)
-	return auth->loginSteam(ticket).then([auth]()
+	return auth->login(std::map<std::string,std::string>{ {"provider","test"},{"login",ticket} }).then([auth]()
 	{
 		//Authorize access to the locator private scene and return it.
 		return auth->getPrivateScene("locator");
@@ -52,21 +52,6 @@ pplx::task<void> runClient(std::shared_ptr<Stormancer::Client> client, std::stri
 		logger->log(Stormancer::LogLevel::Info, "startup", "obtaining connection information to dedicated server");
 		return peer->openP2PTunnel(Stormancer::P2P_SERVER_ID);// 
 
-	}).then([logger](pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> t) 
-	{
-		try
-		{
-			t.get();
-			logger->log(Stormancer::LogLevel::Info, "startup", "successful");
-		}
-		catch (std::exception& ex)
-		{
-			auto msg = ex.what();
-			logger->log(Stormancer::LogLevel::Error, "startup", "failed : " + std::string(msg));
-		}
-		//Connect unreal!
-		
-		
 	});
 	
 
