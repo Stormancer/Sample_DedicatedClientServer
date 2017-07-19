@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "online/GameSessionServiceP2P.h"
-#include "AuthenticationService.h"
+#include "Authentication/AuthenticationService.h"
 
 pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> runClient(std::shared_ptr<Stormancer::Client> client, std::string ticket)
 {

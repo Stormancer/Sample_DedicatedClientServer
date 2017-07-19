@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "public\DedicatedServerModule.h"
 #include "online\GameSessionPluginP2P.h"
-#include "AuthenticationPlugin.h"
+#include "Authentication\AuthenticationPlugin.h"
 #include "Compatibility\pplxtasks_noexcept.h"
 #include "IClientFactory.h"
 

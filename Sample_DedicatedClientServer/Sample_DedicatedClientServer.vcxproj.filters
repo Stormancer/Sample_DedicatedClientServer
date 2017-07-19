@@ -62,11 +62,11 @@
     <ClCompile Include="DedicatedServerModule.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Plugins\AuthenticationPlugin.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationPlugin.cpp">
+      <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
-    <ClCompile Include="Plugins\AuthenticationService.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationService.cpp">
+      <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
