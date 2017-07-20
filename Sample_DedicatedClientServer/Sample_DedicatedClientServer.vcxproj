@@ -94,7 +94,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>DCS_OnlineModule$(PlatformToolsetVersion)_$(Platform)_$(Configuration)</TargetName>
+    <TargetName>DCS_OnlineModule$(PlatformToolsetVersion)_$(Configuration)_$(Platform)</TargetName>
     <OutDir>$(SolutionDir)output\</OutDir>
     <IntDir>intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
