@@ -14,12 +14,12 @@ pplx::task<void> runServer(
 
 
 
-DedicatedServerModule::DedicatedServerModule(size_t id) :
+DedicatedServerModule::DedicatedServerModule(size_t id,const std::string& endPoint) :
 	_id(id)
 {
-	Stormancer::IClientFactory::SetConfig(id, []() {
+	Stormancer::IClientFactory::SetConfig(id, [endPoint]() {
 		auto logger = std::make_shared<Stormancer::ConsoleLogger>();
-		auto config = Stormancer::Configuration::create("http://api.stormancer.com:8081", "samples-jm", "sample-dedicated");
+		auto config = Stormancer::Configuration::create(endPoint, "samples-jm", "sample-dedicated");
 		config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();
 		config->logger = logger;
 		//Adds the auth plugin to the client. It enable the AuthenticationService to easily interact with the server authentication plugin.
