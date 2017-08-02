@@ -5,6 +5,8 @@
 #include "Compatibility\pplxtasks_noexcept.h"
 #include "IClientFactory.h"
 
+#include "Windows.h"
+
 pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> runClient(std::shared_ptr<Stormancer::Client> client, std::string ticket);
 pplx::task<void> runServer(
 	std::shared_ptr<Stormancer::Client> client,
@@ -14,14 +16,31 @@ pplx::task<void> runServer(
 
 
 
-DedicatedServerModule::DedicatedServerModule(size_t id,const std::string& endPoint) :
+DedicatedServerModule::DedicatedServerModule(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers, Stormancer::ILogger_ptr myLogger):
 	_id(id)
 {
-	Stormancer::IClientFactory::SetConfig(id, [endPoint]() {
+	//Get connection port passed as environment variable when the Stormancer app starts the server
+	size_t len = 256;
+	char* buffer = new char[256];
+	auto err_no = _dupenv_s(&buffer, &len, "P2Pport");
+
+	Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName, err_no, len, buffer]() {
+		// Todo Get the env var port setup with the server app
+		//DebugBreak();
 		auto logger = std::make_shared<Stormancer::ConsoleLogger>();
-		auto config = Stormancer::Configuration::create(endPoint, "samples-jm", "sample-dedicated");
+		auto config = Stormancer::Configuration::create(endPoint, accountID, applicationName);
 		config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();
 		config->logger = logger;
+		config->maxPeers = maxPeers;
+
+		// Check if p2p port is set in var env
+		if ((err_no == 0) && (len > 0))
+		{
+			auto port = atoi(buffer);
+
+			config->p2pServerPort = port;
+		}
+
 		//Adds the auth plugin to the client. It enable the AuthenticationService to easily interact with the server authentication plugin.
 		config->addPlugin(new Stormancer::AuthenticationPlugin());
 		config->addPlugin(new Stormancer::GameSessionPluginP2P());
@@ -36,7 +55,9 @@ Task_ptr<Endpoint> DedicatedServerModule::startClient(std::string ticket)
 	auto logger = client->dependencyResolver()->resolve<Stormancer::ILogger>();
 	auto dispatcher = client->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
 	return Stormancer::Task<Endpoint>::create(
-		runClient(client, ticket).then([](std::shared_ptr<Stormancer::P2PTunnel> t) { return Endpoint{ t->ip,t->port }; }),
+		runClient(client, ticket).then([this](std::shared_ptr<Stormancer::P2PTunnel> t) {
+		currentP2PTunnel = t;
+		return Endpoint{ t->ip,t->port }; }),
 		logger,
 		dispatcher);
 }

@@ -8,8 +8,6 @@ pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> runClient(std::shared_ptr<Sto
 	auto logger = client->dependencyResolver()->resolve<Stormancer::ILogger>();
 	logger->log(Stormancer::LogLevel::Info, "startup", "starting as client");
 
-	
-
 	auto auth = client->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
 	//Login using the steam auth provider (if configured as "mockup", it accepts any ticket as genuine)
 	return auth->login(std::map<std::string,std::string>{ {"provider","test"},{"login",ticket} }).then([auth]()
