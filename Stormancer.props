@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup >
-    <StormancerPath>D:\Workspace\stormancer-sdk-cpp-ps4\</StormancerPath>
+    <StormancerPath>D:\Workspace\stormancer-sdk-cpp\</StormancerPath>
     
   </PropertyGroup>
 

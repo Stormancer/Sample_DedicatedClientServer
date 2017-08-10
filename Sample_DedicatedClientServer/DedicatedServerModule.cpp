@@ -25,8 +25,6 @@ DedicatedServerModule::DedicatedServerModule(size_t id, const std::string& endPo
 	auto err_no = _dupenv_s(&buffer, &len, "P2Pport");
 
 	Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName, err_no, len, buffer]() {
-		// Todo Get the env var port setup with the server app
-		//DebugBreak();
 		std::shared_ptr<Stormancer::ConsoleLogger> logger = std::make_shared<Stormancer::ConsoleLogger>();
 		auto config = Stormancer::Configuration::create(endPoint, accountID, applicationName);
 		config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();		

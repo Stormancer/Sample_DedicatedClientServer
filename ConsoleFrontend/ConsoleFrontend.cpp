@@ -13,26 +13,7 @@
 #include <iostream>
 
 int main(int argc, char *argv[])
-{	
-	/*bool waitDebugger = true;
-	for (int i = 0; i < argc; i++)
-	{
-		if (std::string(argv[i]) == "-noDebugger")
-		{
-			waitDebugger = false;
-		}
-	}
-	while (waitDebugger && !IsDebuggerPresent())
-	{
-		std::this_thread::sleep_for((std::chrono::milliseconds)10);
-	}*/
-
-	//while (!IsDebuggerPresent())
-	//{
-	//	std::this_thread::sleep_for((std::chrono::milliseconds)10);
-	//}
-	//DebugBreak();
-	
+{		
 	size_t len = 256;
 	char *buffer = new char[256];
 	bool isRunning = true;
@@ -72,7 +53,6 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		//DebugBreak();
 		onlineModule = std::make_shared<DedicatedServerModule>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1000);
 		onlineModule->startServer(std::string(buffer), startServer, shutdownServer);
 	}
