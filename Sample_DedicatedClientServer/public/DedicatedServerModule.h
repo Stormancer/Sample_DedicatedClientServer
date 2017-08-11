@@ -23,7 +23,7 @@ enum class ConnectionStatus
 	FindingGameSession,
 	ConnectingToGameSession,
 	WaitingServer,
-	OpenningConnection,
+	OpeningConnection,
 	Connecting,
 };
 
