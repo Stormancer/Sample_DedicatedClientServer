@@ -22,6 +22,12 @@
     <Filter Include="Fichiers d%27en-tête\Public">
       <UniqueIdentifier>{dd6ae098-bded-4fb4-bc63-02fdc8a66abc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Public">
+      <UniqueIdentifier>{38f58ef9-62ef-419d-984d-fcfd80215b38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Private">
+      <UniqueIdentifier>{8a2e242b-06e6-4e09-86f9-eabe11bf76bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,6 +48,12 @@
     <ClInclude Include="public\DedicatedServerModule.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Fichiers sources\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientBase.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -56,9 +68,6 @@
     <ClCompile Include="Server.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Client.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="DedicatedServerModule.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -67,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationService.cpp">
       <Filter>Fichiers sources\Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Fichiers sources\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientBase.cpp">
+      <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

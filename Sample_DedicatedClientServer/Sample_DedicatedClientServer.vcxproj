@@ -166,6 +166,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientBase.h" />
     <ClInclude Include="online\GameSessionPluginP2P.h" />
     <ClInclude Include="online\GameSessionServiceP2P.h" />
     <ClInclude Include="public\DedicatedServerModule.h" />
@@ -176,6 +178,7 @@
     <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationPlugin.cpp" />
     <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationService.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="ClientBase.cpp" />
     <ClCompile Include="DedicatedServerModule.cpp" />
     <ClCompile Include="online\GameSessionPluginP2P.cpp" />
     <ClCompile Include="online\GameSessionServiceP2P.cpp" />

@@ -18,6 +18,18 @@ int main(int argc, char *argv[])
 	char *buffer = new char[256];
 	bool isRunning = true;
 
+	std::string startingMap = "";
+	for (int i = 0; i < argc; i++) 
+	{
+		if (std::string(argv[i]) == "-StartingMap")
+		{
+			startingMap = argv[i + 1];
+			std::cout << "Found starting";
+		}
+	
+	}
+	printf("Starting map %s \n", startingMap);
+
 	//Get connection token passed as environment variable when the Stormancer app starts the server (Plugins/GameSessions/GameSessionService.cs line 413)
 	auto err_no = _dupenv_s(&buffer, &len, "connectionToken");
 
@@ -35,9 +47,11 @@ int main(int argc, char *argv[])
 	if (err_no || !len)//Failed to get connection token. We are a client.
 	{
 		onlineModule = std::make_shared<DedicatedServerModule>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);
+		onlineModule->updateConnectionStatus = [](int status) {};
+
 		//Client
 		std::string randId = std::to_string(rand() % 1000);
-		onlineModule->startClient(randId)->Then([](StormancerResult<Endpoint> e) {
+		onlineModule->startClient(randId, startingMap)->Then([](StormancerResult<Endpoint> e) {
 			auto logger = Stormancer::ILogger::instance();
 		
 			if (e.Success())

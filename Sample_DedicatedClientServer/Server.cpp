@@ -12,8 +12,6 @@ pplx::task<void> runServer(
 	auto logger = client->dependencyResolver()->resolve<Stormancer::ILogger>();
 	logger->log(Stormancer::LogLevel::Info, "startup", "starting as server");
 
-	
-
 	return client->connectToPrivateScene(connectionToken).then([onStopServerReceived, onStartServerReceived](Stormancer::Scene_ptr scene) {
 		auto tunnel = scene->registerP2PServer(Stormancer::P2P_SERVER_ID);
 		auto gameSession = scene->dependencyResolver()->resolve<Stormancer::GameSessionServiceP2P>();
