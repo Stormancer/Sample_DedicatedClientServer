@@ -9,7 +9,8 @@ class Client : public ClientBase
 {
 public:
 	
-	Client(size_t clientID, std::shared_ptr<Stormancer::Client> client);
+	Client(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);
+	//Client(size_t clientID, std::shared_ptr<Stormancer::Client> client);
 
 
 	pplx::task<void> runClient(std::shared_ptr<Stormancer::Client> client, const std::string& ticket, const std::function<void(ConnectionStatus)> &connectionStatusCallback);

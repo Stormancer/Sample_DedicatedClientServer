@@ -22,9 +22,6 @@
     <Filter Include="Fichiers d%27en-tête\Public">
       <UniqueIdentifier>{dd6ae098-bded-4fb4-bc63-02fdc8a66abc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Public">
-      <UniqueIdentifier>{38f58ef9-62ef-419d-984d-fcfd80215b38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\Private">
       <UniqueIdentifier>{8a2e242b-06e6-4e09-86f9-eabe11bf76bd}</UniqueIdentifier>
     </Filter>
@@ -48,11 +45,11 @@
     <ClInclude Include="public\DedicatedServerModule.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Fichiers sources\Public</Filter>
-    </ClInclude>
     <ClInclude Include="ClientBase.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

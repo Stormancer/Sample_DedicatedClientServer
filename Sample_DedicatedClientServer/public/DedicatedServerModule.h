@@ -7,26 +7,7 @@ namespace Stormancer
 	class P2PTunnel;
 }
 
-/** 
-	Struc containging the endpoint information
-*/
-struct Endpoint
-{
-	std::string host;
-	unsigned short port;
-};
 
-enum class ConnectionStatus
-{
-	Authenticating,
-	FindLocator,
-	ConnectingLocator,
-	FindingGameSession,
-	ConnectingToGameSession,
-	WaitingServer,
-	OpeningConnection,
-	Connecting,
-};
 
 class DedicatedServerModule
 {
@@ -38,13 +19,13 @@ public:
 
 	ConnectionStatus clientStatus;
 
-	std::function<void(std::string)> updateLog;
-	std::function<void(int)> updateConnectionStatus;
-	std::function<void(ConnectionStatus)> clientCallback;
+	/*std::function<void(std::string)> updateLog;
+
+	std::function<void(ConnectionStatus)> clientCallback;*/
 	std::shared_ptr<OnlineClient> _onlineClient;
 
 	void Tick();
 private:
 	size_t _id;
-	std::shared_ptr<Stormancer::P2PTunnel> _p2pTunnel;
+
 };
