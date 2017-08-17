@@ -6,13 +6,8 @@
 
 namespace SampleDCS
 {
-	ClientBaseDCS::ClientBaseDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
+	ClientBaseDCS::ClientBaseDCS()
 	{
-		SetConfig(id, endPoint, accountID, applicationName, maxPeers);
-
-		_client = Stormancer::IClientFactory::GetClient(id);
-		_actionDispatcher = _client->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
-		_logger = _client->dependencyResolver()->resolve<Stormancer::ILogger>();
 	}
 
 	void ClientBaseDCS::Tick()
@@ -21,8 +16,12 @@ namespace SampleDCS
 		dispatcher->update((std::chrono::milliseconds)10);
 	}
 
-	void ClientBaseDCS::SetConfig(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers) 
+	void ClientBaseDCS::Init(size_t id)
 	{
-		_logger->log(Stormancer::LogLevel::Error, "Error", "SetConfig is not implemented");
+		_client = Stormancer::IClientFactory::GetClient(id);
+		_actionDispatcher = _client->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
+		_logger = _client->dependencyResolver()->resolve<Stormancer::ILogger>();
 	}
+
+
 }

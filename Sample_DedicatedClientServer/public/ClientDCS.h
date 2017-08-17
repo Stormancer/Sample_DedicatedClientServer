@@ -8,9 +8,7 @@ namespace SampleDCS {
 	class ClientDCS : public ClientBaseDCS
 	{
 	public:
-		ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);
-
-		virtual void SetConfig(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers) override;
+		ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);		
 
 		pplx::task<void> RunClient(std::string& ticket);
 		Task_ptr<Endpoint> ConnectToMap(std::string mapId);

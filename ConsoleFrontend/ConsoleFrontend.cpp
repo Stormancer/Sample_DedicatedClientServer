@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 	if (err_no || !len)//Failed to get connection token. We are a client.
 	{
 
-		std::shared_ptr<SampleDCS::ClientDCS> client = std::make_shared<ClientDCS>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);
+		std::shared_ptr<SampleDCS::ClientDCS> client = std::make_shared<ClientDCS>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);		
 		ClientBaseDCS = client;
 		ClientBaseDCS->OnConnectionStatusChange = [](int status) {};
 
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 		std::string randId = std::to_string(rand() % 1000);
 		client->RunClient(randId).then([client, startingMap]()
 		{
-			client->ConnectToMap(startingMap)->Then([](StormancerResult<Endpoint> e) 
+			client->ConnectToMap(startingMap)->Then([](StormancerResult<Endpoint> e)
 			{
 				auto logger = Stormancer::ILogger::instance();
 

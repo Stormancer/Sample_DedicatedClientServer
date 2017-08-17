@@ -17,6 +17,7 @@ namespace Stormancer
 	class P2PTunnel;
 }
 
+// Todo: se déconnecter du locator à la fin du progamme
 namespace SampleDCS {
 	/**
 	Struc containging the endpoint information
@@ -30,8 +31,8 @@ namespace SampleDCS {
 	class ClientBaseDCS
 	{
 	public:
-		ClientBaseDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);
-		virtual void SetConfig(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);
+		ClientBaseDCS();
+		virtual void Init(size_t id);
 		std::function<void(int)> OnConnectionStatusChange;
 		void Tick();
 	protected:

@@ -402,3 +402,329 @@
 [2017-08-16T11:35:57Z] [Trace] [RakNetTransport] Deleting RakPeerInterface...
 [2017-08-16T11:35:57Z] [Trace] [RakNetTransport] Deleting RakNet transport...
 [2017-08-16T11:35:57Z] [Trace] [RakNetTransport] RakNet transport deleted
+[2017-08-17T17:14:56Z] [Trace] [Client] Creating the client...
+[2017-08-17T17:14:56Z] [Trace] [Client] Client created
+[2017-08-17T17:14:56Z] [Trace] [Client] Initializing client...
+[2017-08-17T17:14:56Z] [Trace] [Client] Client initialized
+[2017-08-17T17:14:56Z] [Info ] [startup] starting as server
+[2017-08-17T17:14:56Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YNrN0NKpklzc3VlZNNI1OWCuGblSqdSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBDeKsxY3svnSpcJHddnOkKyp1ZlcnNpb24B-BbCa53RwF8HRQrcvFKoLZ3XKdlOJJmFigCrzpoiD6Ik="]
+[2017-08-17T17:14:56Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream QOoCo4AO3UObvgC8uco00w 3 5248071818395730762 5248071815395730762  MapID Þ*ÌXÞËçJ—	×g:B² 1
+[2017-08-17T17:14:56Z] [Trace] [Client] Get scene MapID [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YNrN0NKpklzc3VlZNNI1OWCuGblSqdSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBDeKsxY3svnSpcJHddnOkKyp1ZlcnNpb24B-BbCa53RwF8HRQrcvFKoLZ3XKdlOJJmFigCrzpoiD6Ik=]
+[2017-08-17T17:14:56Z] [Trace] [Client] Starting transport [port:0; maxPeers:1001]
+[2017-08-17T17:14:56Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-08-17T17:14:56Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-08-17T17:14:56Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-08-17T17:14:56Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-08-17T17:14:56Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30001]
+[2017-08-17T17:14:56Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30001]
+[2017-08-17T17:14:56Z] [Trace] [RakNetTransport] 127.0.0.1:30001 connected
+[2017-08-17T17:14:56Z] [Info ] [P2P] Adding connection 127.0.0.1:30001 [0]
+[2017-08-17T17:14:56Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:14:57Z] [Trace] [RakNetTransport] Connection ID received [1179649]
+[2017-08-17T17:14:57Z] [Trace] [synchronizedClock] Starting SyncClock...
+[2017-08-17T17:14:57Z] [Trace] [synchronizedClock] SyncClock started
+[2017-08-17T17:14:57Z] [Trace] [Client] Send SceneInfosRequestDto
+[2017-08-17T17:14:57Z] [Trace] [Client] SceneInfosDto received [MapID msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:gamesession.postresults;5:gamesession.reset;6:player.ready;7:player.faulted;] Metadata:[stormancer.gamesession:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-08-17T17:14:57Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:14:57Z] [Trace] [Client] Return the scene [MapID]
+[2017-08-17T17:14:57Z] [Debug] [client] Scene connected. [MapID]
+[2017-08-17T17:14:58Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:62877 => 192.168.2.101:49379
+[2017-08-17T17:14:58Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:49379 => 192.168.2.101:62877
+[2017-08-17T17:14:58Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:49379 => 192.168.2.101:62877 ping : 15
+[2017-08-17T17:14:58Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:62877 => 192.168.2.101:49379
+[2017-08-17T17:14:58Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:49379 => 127.0.0.1:62877
+[2017-08-17T17:14:58Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:49379 => 127.0.0.1:62877 ping : 16
+[2017-08-17T17:14:59Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:62877 => 127.0.0.1:49379
+[2017-08-17T17:14:59Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:49379 => 192.168.2.101:62877
+[2017-08-17T17:14:59Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:49379 => 192.168.2.101:62877 ping : 15
+[2017-08-17T17:14:59Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:62877 => 127.0.0.1:49379
+[2017-08-17T17:14:59Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:49379 => 127.0.0.1:62877
+[2017-08-17T17:14:59Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:49379 => 127.0.0.1:62877 ping : 17
+[2017-08-17T17:14:59Z] [Debug] [p2p] Waiting connection 127.0.0.1:62877 => 192.168.2.101:49379
+[2017-08-17T17:14:59Z] [Info ] [P2P] Added pending connection from id  [1114113]
+[2017-08-17T17:15:00Z] [Trace] [RakNetTransport] Incoming connection [192.168.2.101:62877]
+[2017-08-17T17:15:00Z] [Trace] [RakNetTransport] 192.168.2.101:62877 connected
+[2017-08-17T17:15:00Z] [Info ] [P2P] Adding connection 192.168.2.101:62877 [1114113]
+[2017-08-17T17:15:00Z] [Info ] [P2P] Transitioning connection from pending [1114113]
+[2017-08-17T17:17:31Z] [Trace] [Client] Deleting client...
+[2017-08-17T17:17:31Z] [Trace] [RakNetTransport] Stopping RakNet transport...
+[2017-08-17T17:17:33Z] [Trace] [RakNetTransport] RakNet transport stopped
+[2017-08-17T17:17:33Z] [Trace] [synchronizedClock] Stopping SyncClock...
+[2017-08-17T17:17:33Z] [Trace] [synchronizedClock] SyncClock stopped
+[2017-08-17T17:17:33Z] [Trace] [RakNetTransport] On close [923238552010196099]
+[2017-08-17T17:17:33Z] [Debug] [client] Scene disconnected [MapID]
+[2017-08-17T17:17:33Z] [Trace] [Client] Client deleted
+[2017-08-17T17:17:33Z] [Trace] [RakNetTransport] Deleting RakPeerInterface...
+[2017-08-17T17:17:33Z] [Trace] [RakNetTransport] Deleting RakNet transport...
+[2017-08-17T17:17:33Z] [Trace] [RakNetTransport] RakNet transport deleted
+[2017-08-17T17:24:38Z] [Trace] [Client] Creating the client...
+[2017-08-17T17:24:38Z] [Trace] [Client] Client created
+[2017-08-17T17:24:38Z] [Trace] [Client] Initializing client...
+[2017-08-17T17:24:38Z] [Trace] [Client] Client initialized
+[2017-08-17T17:24:38Z] [Info ] [startup] starting as server
+[2017-08-17T17:24:38Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMKl3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YTF5JLopklzc3VlZNNI1OWEExQ06KdSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBBIcZr9ZB92T5kds/oySxObp1ZlcnNpb24B-bu8PgjXCG1zPbc8VKraSl9zJ7OKZB170WgD3wg/poAo="]
+[2017-08-17T17:24:38Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream QOoCo4AO3UObvgC8uco00w 3 5248071824212005608 5248071821212005608  MapID HqšýdvO™³ú2K› 1
+[2017-08-17T17:24:38Z] [Trace] [Client] Get scene MapID [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMKl3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YTF5JLopklzc3VlZNNI1OWEExQ06KdSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBBIcZr9ZB92T5kds/oySxObp1ZlcnNpb24B-bu8PgjXCG1zPbc8VKraSl9zJ7OKZB170WgD3wg/poAo=]
+[2017-08-17T17:24:38Z] [Trace] [Client] Starting transport [port:0; maxPeers:1001]
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-08-17T17:24:38Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30000]
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30000]
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] 127.0.0.1:30000 connected
+[2017-08-17T17:24:38Z] [Info ] [P2P] Adding connection 127.0.0.1:30000 [0]
+[2017-08-17T17:24:38Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:24:38Z] [Trace] [RakNetTransport] Connection ID received [1310721]
+[2017-08-17T17:24:38Z] [Trace] [synchronizedClock] Starting SyncClock...
+[2017-08-17T17:24:38Z] [Trace] [synchronizedClock] SyncClock started
+[2017-08-17T17:24:38Z] [Trace] [Client] Send SceneInfosRequestDto
+[2017-08-17T17:24:38Z] [Trace] [Client] SceneInfosDto received [MapID msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:gamesession.postresults;5:gamesession.reset;6:player.ready;7:player.faulted;] Metadata:[stormancer.gamesession:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-08-17T17:24:38Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:24:38Z] [Trace] [Client] Return the scene [MapID]
+[2017-08-17T17:24:38Z] [Debug] [client] Scene connected. [MapID]
+[2017-08-17T17:24:39Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:57605 => 192.168.2.101:58691
+[2017-08-17T17:24:40Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:58691 => 192.168.2.101:57605
+[2017-08-17T17:24:40Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:58691 => 192.168.2.101:57605 ping : 16
+[2017-08-17T17:24:40Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:57605 => 192.168.2.101:58691
+[2017-08-17T17:24:40Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:58691 => 127.0.0.1:57605
+[2017-08-17T17:24:40Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:58691 => 127.0.0.1:57605 ping : 15
+[2017-08-17T17:24:40Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:57605 => 127.0.0.1:58691
+[2017-08-17T17:24:40Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:58691 => 192.168.2.101:57605
+[2017-08-17T17:24:40Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:58691 => 192.168.2.101:57605 ping : 16
+[2017-08-17T17:24:41Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:57605 => 127.0.0.1:58691
+[2017-08-17T17:24:41Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:58691 => 127.0.0.1:57605
+[2017-08-17T17:24:41Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:58691 => 127.0.0.1:57605 ping : 16
+[2017-08-17T17:24:41Z] [Debug] [p2p] Waiting connection 127.0.0.1:57605 => 127.0.0.1:58691
+[2017-08-17T17:24:41Z] [Info ] [P2P] Added pending connection from id  [1245185]
+[2017-08-17T17:24:41Z] [Trace] [RakNetTransport] Incoming connection [127.0.0.1:57605]
+[2017-08-17T17:24:41Z] [Trace] [RakNetTransport] 127.0.0.1:57605 connected
+[2017-08-17T17:24:41Z] [Info ] [P2P] Adding connection 127.0.0.1:57605 [1245185]
+[2017-08-17T17:24:41Z] [Info ] [P2P] Transitioning connection from pending [1245185]
+[2017-08-17T17:27:32Z] [Trace] [RakNetTransport] Peer lost the connection [127.0.0.1:57605]
+[2017-08-17T17:27:32Z] [Trace] [RakNetTransport] 127.0.0.1:57605 disconnected [CLIENT_CONNECTION_LOST]
+[2017-08-17T17:27:32Z] [Trace] [RakNetTransport] On close [756605370587553870]
+[2017-08-17T17:27:33Z] [Trace] [Client] Deleting client...
+[2017-08-17T17:27:33Z] [Trace] [RakNetTransport] Stopping RakNet transport...
+[2017-08-17T17:27:33Z] [Trace] [RakNetTransport] RakNet transport stopped
+[2017-08-17T17:27:33Z] [Trace] [synchronizedClock] Stopping SyncClock...
+[2017-08-17T17:27:33Z] [Trace] [synchronizedClock] SyncClock stopped
+[2017-08-17T17:27:33Z] [Trace] [RakNetTransport] On close [360288598588814854]
+[2017-08-17T17:27:33Z] [Debug] [client] Scene disconnected [MapID]
+[2017-08-17T17:27:33Z] [Trace] [Client] Client deleted
+[2017-08-17T17:27:33Z] [Trace] [RakNetTransport] Deleting RakPeerInterface...
+[2017-08-17T17:27:33Z] [Trace] [RakNetTransport] Deleting RakNet transport...
+[2017-08-17T17:27:33Z] [Trace] [RakNetTransport] RakNet transport deleted
+[2017-08-17T17:28:38Z] [Trace] [Client] Creating the client...
+[2017-08-17T17:28:38Z] [Trace] [Client] Client created
+[2017-08-17T17:28:38Z] [Trace] [Client] Initializing client...
+[2017-08-17T17:28:38Z] [Trace] [Client] Client initialized
+[2017-08-17T17:28:38Z] [Info ] [startup] starting as server
+[2017-08-17T17:28:38Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YVUrHzwpklzc3VlZNNI1OWEodwe8KdSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBDasjPCBmUeTbJfH26KFstmp1ZlcnNpb24B-Tg9/bR+VTwKzd1PUZhpt4Pi60ILmdVJEQdycPWaESn4="]
+[2017-08-17T17:28:38Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream QOoCo4AO3UObvgC8uco00w 3 5248071826607471856 5248071823607471856  MapID Ú²3ÂeM²_nŠËf 1
+[2017-08-17T17:28:38Z] [Trace] [Client] Get scene MapID [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YVUrHzwpklzc3VlZNNI1OWEodwe8KdSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBDasjPCBmUeTbJfH26KFstmp1ZlcnNpb24B-Tg9/bR+VTwKzd1PUZhpt4Pi60ILmdVJEQdycPWaESn4=]
+[2017-08-17T17:28:38Z] [Trace] [Client] Starting transport [port:0; maxPeers:1001]
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-08-17T17:28:38Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30001]
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30001]
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] 127.0.0.1:30001 connected
+[2017-08-17T17:28:38Z] [Info ] [P2P] Adding connection 127.0.0.1:30001 [0]
+[2017-08-17T17:28:38Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:28:38Z] [Trace] [RakNetTransport] Connection ID received [1507329]
+[2017-08-17T17:28:38Z] [Trace] [synchronizedClock] Starting SyncClock...
+[2017-08-17T17:28:38Z] [Trace] [synchronizedClock] SyncClock started
+[2017-08-17T17:28:38Z] [Trace] [Client] Send SceneInfosRequestDto
+[2017-08-17T17:28:38Z] [Trace] [Client] SceneInfosDto received [MapID msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:gamesession.postresults;5:gamesession.reset;6:player.ready;7:player.faulted;] Metadata:[stormancer.gamesession:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-08-17T17:28:38Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:28:38Z] [Trace] [Client] Return the scene [MapID]
+[2017-08-17T17:28:38Z] [Debug] [client] Scene connected. [MapID]
+[2017-08-17T17:28:38Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:60040 => 192.168.2.101:54475
+[2017-08-17T17:28:38Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:54475 => 192.168.2.101:60040
+[2017-08-17T17:28:38Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:54475 => 192.168.2.101:60040 ping : 17
+[2017-08-17T17:28:38Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:60040 => 192.168.2.101:54475
+[2017-08-17T17:28:39Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:54475 => 127.0.0.1:60040
+[2017-08-17T17:28:39Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:54475 => 127.0.0.1:60040 ping : 17
+[2017-08-17T17:28:39Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:60040 => 127.0.0.1:54475
+[2017-08-17T17:28:39Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:54475 => 192.168.2.101:60040
+[2017-08-17T17:28:39Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:54475 => 192.168.2.101:60040 ping : 16
+[2017-08-17T17:28:39Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:60040 => 127.0.0.1:54475
+[2017-08-17T17:28:40Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:54475 => 127.0.0.1:60040
+[2017-08-17T17:28:40Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:54475 => 127.0.0.1:60040 ping : 17
+[2017-08-17T17:28:40Z] [Debug] [p2p] Waiting connection 127.0.0.1:60040 => 127.0.0.1:54475
+[2017-08-17T17:28:40Z] [Info ] [P2P] Added pending connection from id  [1441793]
+[2017-08-17T17:28:40Z] [Trace] [RakNetTransport] Incoming connection [127.0.0.1:60040]
+[2017-08-17T17:28:40Z] [Trace] [RakNetTransport] 127.0.0.1:60040 connected
+[2017-08-17T17:28:40Z] [Info ] [P2P] Adding connection 127.0.0.1:60040 [1441793]
+[2017-08-17T17:28:40Z] [Info ] [P2P] Transitioning connection from pending [1441793]
+[2017-08-17T17:29:10Z] [Trace] [Client] Deleting client...
+[2017-08-17T17:29:10Z] [Trace] [RakNetTransport] Stopping RakNet transport...
+[2017-08-17T17:29:10Z] [Trace] [RakNetTransport] RakNet transport stopped
+[2017-08-17T17:29:10Z] [Trace] [synchronizedClock] Stopping SyncClock...
+[2017-08-17T17:29:10Z] [Trace] [synchronizedClock] SyncClock stopped
+[2017-08-17T17:29:10Z] [Trace] [RakNetTransport] On close [923238552010196099]
+[2017-08-17T17:29:10Z] [Debug] [client] Scene disconnected [MapID]
+[2017-08-17T17:29:10Z] [Trace] [Client] Client deleted
+[2017-08-17T17:29:10Z] [Trace] [RakNetTransport] Deleting RakPeerInterface...
+[2017-08-17T17:29:10Z] [Trace] [RakNetTransport] Deleting RakNet transport...
+[2017-08-17T17:29:10Z] [Trace] [RakNetTransport] RakNet transport deleted
+[2017-08-17T17:32:01Z] [Trace] [Client] Creating the client...
+[2017-08-17T17:32:01Z] [Trace] [Client] Client created
+[2017-08-17T17:32:01Z] [Trace] [Client] Initializing client...
+[2017-08-17T17:32:01Z] [Trace] [Client] Client initialized
+[2017-08-17T17:32:01Z] [Info ] [startup] starting as server
+[2017-08-17T17:32:01Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YXOA2sHpklzc3VlZNNI1OWFGzMNB6dSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBDBz7Um0kIlRLU/t/bL7iipp1ZlcnNpb24B-RAhL0sEwqbr9VKz+BPBVF1jPoU922J9LNyYqlizhvJk="]
+[2017-08-17T17:32:01Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream QOoCo4AO3UObvgC8uco00w 3 5248071828643212039 5248071825643212039  MapID ÁÏµ&ÒB%Dµ?·öËî(© 1
+[2017-08-17T17:32:01Z] [Trace] [Client] Get scene MapID [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YXOA2sHpklzc3VlZNNI1OWFGzMNB6dSb3V0aW5nwKdTY2VuZUlkpU1hcElEqFVzZXJEYXRhxBDBz7Um0kIlRLU/t/bL7iipp1ZlcnNpb24B-RAhL0sEwqbr9VKz+BPBVF1jPoU922J9LNyYqlizhvJk=]
+[2017-08-17T17:32:01Z] [Trace] [Client] Starting transport [port:0; maxPeers:1001]
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-08-17T17:32:01Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30001]
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30001]
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] 127.0.0.1:30001 connected
+[2017-08-17T17:32:01Z] [Info ] [P2P] Adding connection 127.0.0.1:30001 [0]
+[2017-08-17T17:32:01Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:32:01Z] [Trace] [RakNetTransport] Connection ID received [1703937]
+[2017-08-17T17:32:01Z] [Trace] [synchronizedClock] Starting SyncClock...
+[2017-08-17T17:32:01Z] [Trace] [synchronizedClock] SyncClock started
+[2017-08-17T17:32:01Z] [Trace] [Client] Send SceneInfosRequestDto
+[2017-08-17T17:32:01Z] [Trace] [Client] SceneInfosDto received [MapID msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:gamesession.postresults;5:gamesession.reset;6:player.ready;7:player.faulted;] Metadata:[stormancer.gamesession:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-08-17T17:32:01Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:32:01Z] [Trace] [Client] Return the scene [MapID]
+[2017-08-17T17:32:01Z] [Debug] [client] Scene connected. [MapID]
+[2017-08-17T17:32:02Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:59449 => 192.168.2.101:53453
+[2017-08-17T17:32:02Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:53453 => 192.168.2.101:59449
+[2017-08-17T17:32:02Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:53453 => 192.168.2.101:59449 ping : 16
+[2017-08-17T17:32:02Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:59449 => 192.168.2.101:53453
+[2017-08-17T17:32:02Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:53453 => 127.0.0.1:59449
+[2017-08-17T17:32:02Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:53453 => 127.0.0.1:59449 ping : 16
+[2017-08-17T17:32:02Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:59449 => 127.0.0.1:53453
+[2017-08-17T17:32:03Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:53453 => 192.168.2.101:59449
+[2017-08-17T17:32:03Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:53453 => 192.168.2.101:59449 ping : 16
+[2017-08-17T17:32:03Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:59449 => 127.0.0.1:53453
+[2017-08-17T17:32:03Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:53453 => 127.0.0.1:59449
+[2017-08-17T17:32:03Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:53453 => 127.0.0.1:59449 ping : 16
+[2017-08-17T17:32:03Z] [Debug] [p2p] Waiting connection 127.0.0.1:59449 => 192.168.2.101:53453
+[2017-08-17T17:32:03Z] [Info ] [P2P] Added pending connection from id  [1638401]
+[2017-08-17T17:32:03Z] [Trace] [RakNetTransport] Incoming connection [192.168.2.101:59449]
+[2017-08-17T17:32:03Z] [Trace] [RakNetTransport] 192.168.2.101:59449 connected
+[2017-08-17T17:32:03Z] [Info ] [P2P] Adding connection 192.168.2.101:59449 [1638401]
+[2017-08-17T17:32:03Z] [Info ] [P2P] Transitioning connection from pending [1638401]
+[2017-08-17T17:32:07Z] [Trace] [Client] Creating the client...
+[2017-08-17T17:32:07Z] [Trace] [Client] Client created
+[2017-08-17T17:32:07Z] [Trace] [Client] Initializing client...
+[2017-08-17T17:32:07Z] [Trace] [Client] Client initialized
+[2017-08-17T17:32:07Z] [Info ] [startup] starting as server
+[2017-08-17T17:32:07Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMKl3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YXRPvcupklzc3VlZNNI1OWFHm6ZLqdSb3V0aW5nwKdTY2VuZUlkpk1hcElEMahVc2VyRGF0YcQQoKnmFZ+Djk+dTmcEikQQ1qdWZXJzaW9uAQ==-f6cugTKC6L9poal49jUl9X++fmwQAr5CIEmNLDMhkSk="]
+[2017-08-17T17:32:07Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream QOoCo4AO3UObvgC8uco00w 3 5248071828697446190 5248071825697446190  MapID1  ©æŸƒŽONgŠDÖ 1
+[2017-08-17T17:32:07Z] [Trace] [Client] Get scene MapID1 [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZRT29DbzRBTzNVT2J2Z0M4dWNvMDB3qUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMKl3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jU5YXRPvcupklzc3VlZNNI1OWFHm6ZLqdSb3V0aW5nwKdTY2VuZUlkpk1hcElEMahVc2VyRGF0YcQQoKnmFZ+Djk+dTmcEikQQ1qdWZXJzaW9uAQ==-f6cugTKC6L9poal49jUl9X++fmwQAr5CIEmNLDMhkSk=]
+[2017-08-17T17:32:07Z] [Trace] [Client] Starting transport [port:0; maxPeers:1001]
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-08-17T17:32:07Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30000]
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30000]
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] 127.0.0.1:30000 connected
+[2017-08-17T17:32:07Z] [Info ] [P2P] Adding connection 127.0.0.1:30000 [0]
+[2017-08-17T17:32:07Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:32:07Z] [Trace] [RakNetTransport] Connection ID received [1835009]
+[2017-08-17T17:32:07Z] [Trace] [synchronizedClock] Starting SyncClock...
+[2017-08-17T17:32:07Z] [Trace] [synchronizedClock] SyncClock started
+[2017-08-17T17:32:07Z] [Trace] [Client] Send SceneInfosRequestDto
+[2017-08-17T17:32:07Z] [Trace] [Client] SceneInfosDto received [MapID1 msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:gamesession.postresults;5:gamesession.reset;6:player.ready;7:player.faulted;] Metadata:[stormancer.gamesession:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-08-17T17:32:07Z] [Trace] [Client] Update server metadata
+[2017-08-17T17:32:07Z] [Trace] [Client] Return the scene [MapID1]
+[2017-08-17T17:32:07Z] [Debug] [client] Scene connected. [MapID1]
+[2017-08-17T17:32:07Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:53456 => 192.168.2.101:61161
+[2017-08-17T17:32:07Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:61161 => 192.168.2.101:53456
+[2017-08-17T17:32:07Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:61161 => 192.168.2.101:53456 ping : 16
+[2017-08-17T17:32:07Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:53456 => 192.168.2.101:61161
+[2017-08-17T17:32:08Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:61161 => 127.0.0.1:53456
+[2017-08-17T17:32:08Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:61161 => 127.0.0.1:53456 ping : 16
+[2017-08-17T17:32:08Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:53456 => 127.0.0.1:61161
+[2017-08-17T17:32:08Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:61161 => 192.168.2.101:53456
+[2017-08-17T17:32:08Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:61161 => 192.168.2.101:53456 ping : 16
+[2017-08-17T17:32:08Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:53456 => 127.0.0.1:61161
+[2017-08-17T17:32:09Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:61161 => 127.0.0.1:53456
+[2017-08-17T17:32:09Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:61161 => 127.0.0.1:53456 ping : 17
+[2017-08-17T17:32:09Z] [Debug] [p2p] Waiting connection 192.168.2.101:53456 => 127.0.0.1:61161
+[2017-08-17T17:32:09Z] [Info ] [P2P] Added pending connection from id  [1769473]
+[2017-08-17T17:32:09Z] [Trace] [RakNetTransport] Incoming connection [127.0.0.1:53456]
+[2017-08-17T17:32:09Z] [Trace] [RakNetTransport] 127.0.0.1:53456 connected
+[2017-08-17T17:32:09Z] [Info ] [P2P] Adding connection 127.0.0.1:53456 [1769473]
+[2017-08-17T17:32:09Z] [Info ] [P2P] Transitioning connection from pending [1769473]
+[2017-08-17T17:32:18Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:61164 => 192.168.2.101:61161
+[2017-08-17T17:32:18Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:61161 => 192.168.2.101:61164
+[2017-08-17T17:32:18Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:61161 => 192.168.2.101:61164 ping : 16
+[2017-08-17T17:32:18Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:61164 => 192.168.2.101:61161
+[2017-08-17T17:32:18Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:61161 => 127.0.0.1:61164
+[2017-08-17T17:32:18Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:61161 => 127.0.0.1:61164 ping : 15
+[2017-08-17T17:32:19Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:61164 => 127.0.0.1:61161
+[2017-08-17T17:32:19Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:61161 => 192.168.2.101:61164
+[2017-08-17T17:32:19Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:61161 => 192.168.2.101:61164 ping : 16
+[2017-08-17T17:32:19Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:61164 => 127.0.0.1:61161
+[2017-08-17T17:32:19Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:61161 => 127.0.0.1:61164
+[2017-08-17T17:32:19Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:61161 => 127.0.0.1:61164 ping : 17
+[2017-08-17T17:32:19Z] [Debug] [p2p] Waiting connection 127.0.0.1:61164 => 127.0.0.1:61161
+[2017-08-17T17:32:19Z] [Info ] [P2P] Added pending connection from id  [1900545]
+[2017-08-17T17:32:20Z] [Trace] [RakNetTransport] Incoming connection [127.0.0.1:61164]
+[2017-08-17T17:32:20Z] [Trace] [RakNetTransport] 127.0.0.1:61164 connected
+[2017-08-17T17:32:20Z] [Info ] [P2P] Adding connection 127.0.0.1:61164 [1900545]
+[2017-08-17T17:32:20Z] [Info ] [P2P] Transitioning connection from pending [1900545]
+[2017-08-17T17:32:27Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:64160 => 192.168.2.101:61161
+[2017-08-17T17:32:27Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:61161 => 192.168.2.101:64160
+[2017-08-17T17:32:27Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:61161 => 192.168.2.101:64160 ping : 16
+[2017-08-17T17:32:27Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:64160 => 192.168.2.101:61161
+[2017-08-17T17:32:27Z] [Debug] [p2p] Starting connectivity test (CLIENT) 192.168.2.101:61161 => 127.0.0.1:64160
+[2017-08-17T17:32:27Z] [Debug] [p2p] Connectivity test complete : 192.168.2.101:61161 => 127.0.0.1:64160 ping : 17
+[2017-08-17T17:32:28Z] [Debug] [p2p] Starting connectivity test (LISTENER) 192.168.2.101:64160 => 127.0.0.1:61161
+[2017-08-17T17:32:28Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:61161 => 192.168.2.101:64160
+[2017-08-17T17:32:28Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:61161 => 192.168.2.101:64160 ping : 17
+[2017-08-17T17:32:28Z] [Debug] [p2p] Starting connectivity test (LISTENER) 127.0.0.1:64160 => 127.0.0.1:61161
+[2017-08-17T17:32:28Z] [Debug] [p2p] Starting connectivity test (CLIENT) 127.0.0.1:61161 => 127.0.0.1:64160
+[2017-08-17T17:32:28Z] [Debug] [p2p] Connectivity test complete : 127.0.0.1:61161 => 127.0.0.1:64160 ping : 16
+[2017-08-17T17:32:28Z] [Debug] [p2p] Waiting connection 192.168.2.101:64160 => 192.168.2.101:61161
+[2017-08-17T17:32:28Z] [Info ] [P2P] Added pending connection from id  [1966081]
+[2017-08-17T17:32:28Z] [Trace] [RakNetTransport] Incoming connection [192.168.2.101:64160]
+[2017-08-17T17:32:28Z] [Trace] [RakNetTransport] 192.168.2.101:64160 connected
+[2017-08-17T17:32:28Z] [Info ] [P2P] Adding connection 192.168.2.101:64160 [1966081]
+[2017-08-17T17:32:28Z] [Info ] [P2P] Transitioning connection from pending [1966081]
+[2017-08-17T17:32:29Z] [Trace] [RakNetTransport] Peer lost the connection [127.0.0.1:53456]
+[2017-08-17T17:32:29Z] [Trace] [RakNetTransport] 127.0.0.1:53456 disconnected [CLIENT_CONNECTION_LOST]
+[2017-08-17T17:32:29Z] [Trace] [RakNetTransport] On close [986288952036282866]
+[2017-08-17T17:32:59Z] [Trace] [RakNetTransport] Peer lost the connection [192.168.2.101:59449]
+[2017-08-17T17:32:59Z] [Trace] [RakNetTransport] 192.168.2.101:59449 disconnected [CLIENT_CONNECTION_LOST]
+[2017-08-17T17:32:59Z] [Trace] [RakNetTransport] On close [855684562837028675]
+[2017-08-17T17:32:59Z] [Trace] [RakNetTransport] Peer lost the connection [192.168.2.101:64160]
+[2017-08-17T17:32:59Z] [Trace] [RakNetTransport] 192.168.2.101:64160 disconnected [CLIENT_CONNECTION_LOST]
+[2017-08-17T17:32:59Z] [Trace] [RakNetTransport] On close [1094375343113420128]
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] Peer lost the connection [127.0.0.1:61164]
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] 127.0.0.1:61164 disconnected [CLIENT_CONNECTION_LOST]
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] On close [1148418538632840870]
+[2017-08-17T17:33:00Z] [Trace] [Client] Deleting client...
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] Stopping RakNet transport...
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] RakNet transport stopped
+[2017-08-17T17:33:00Z] [Trace] [synchronizedClock] Stopping SyncClock...
+[2017-08-17T17:33:00Z] [Trace] [synchronizedClock] SyncClock stopped
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] On close [923238552010196099]
+[2017-08-17T17:33:00Z] [Debug] [client] Scene disconnected [MapID]
+[2017-08-17T17:33:00Z] [Trace] [Client] Client deleted
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] Deleting RakPeerInterface...
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] Deleting RakNet transport...
+[2017-08-17T17:33:00Z] [Trace] [RakNetTransport] RakNet transport deleted
+[2017-08-17T17:33:02Z] [Trace] [Client] Deleting client...
+[2017-08-17T17:33:02Z] [Trace] [RakNetTransport] Stopping RakNet transport...
+[2017-08-17T17:33:02Z] [Trace] [RakNetTransport] RakNet transport stopped
+[2017-08-17T17:33:02Z] [Trace] [synchronizedClock] Stopping SyncClock...
+[2017-08-17T17:33:02Z] [Trace] [synchronizedClock] SyncClock stopped
+[2017-08-17T17:33:02Z] [Trace] [RakNetTransport] On close [360288598588814854]
+[2017-08-17T17:33:02Z] [Debug] [client] Scene disconnected [MapID1]
+[2017-08-17T17:33:02Z] [Trace] [Client] Client deleted
+[2017-08-17T17:33:02Z] [Trace] [RakNetTransport] Deleting RakPeerInterface...
+[2017-08-17T17:33:02Z] [Trace] [RakNetTransport] Deleting RakNet transport...
+[2017-08-17T17:33:02Z] [Trace] [RakNetTransport] RakNet transport deleted

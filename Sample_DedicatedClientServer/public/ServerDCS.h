@@ -10,8 +10,7 @@ namespace SampleDCS {
 	{
 	public:
 		ServerDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);
-
-		virtual void SetConfig(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers) override;
+		
 		pplx::task<void> RunServer(std::string connectionToken, std::function<void(Endpoint)> onStartServerReceived, std::function<void()> onStopServerReceived);
 
 		size_t _OnlineClientID;

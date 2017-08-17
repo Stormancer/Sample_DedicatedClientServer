@@ -10,37 +10,34 @@
 
 namespace SampleDCS
 {
-	ServerDCS::ServerDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers) 
-		: ClientBaseDCS(id, endPoint, accountID, applicationName, maxPeers)
-	{}
-
-	void ServerDCS::SetConfig(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
+	ServerDCS::ServerDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
 	{
 		size_t len = 256;
 		char* buffer = new char[256];
 		auto err_no = _dupenv_s(&buffer, &len, "P2Pport");
 
 		Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName, err_no, len, buffer]() {
-		//std::shared_ptr<Stormancer::ConsoleLogger> logger = std::make_shared<Stormancer::ConsoleLogger>();
+			//std::shared_ptr<Stormancer::ConsoleLogger> logger = std::make_shared<Stormancer::ConsoleLogger>();
 
-		auto config = Stormancer::Configuration::create(endPoint, accountID, applicationName);
-		config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();
-		config->maxPeers = maxPeers;
+			auto config = Stormancer::Configuration::create(endPoint, accountID, applicationName);
+			config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();
+			config->maxPeers = maxPeers;
 
-		//Server
-		auto port = atoi(buffer);
-		config->p2pServerPort = port;
-		std::shared_ptr<Stormancer::FileLogger> logger = nullptr;
-		logger = std::make_shared<Stormancer::FileLogger>("D:/Workspace/Sample_DedicatedClientServer/server.txt", false);
-		config->logger = logger;
+			//Server
+			auto port = atoi(buffer);
+			config->p2pServerPort = port;
+			std::shared_ptr<Stormancer::FileLogger> logger = nullptr;
+			logger = std::make_shared<Stormancer::FileLogger>("D:/Workspace/Sample_DedicatedClientServer/server.txt", false);
+			config->logger = logger;
 
-		//Adds the auth plugin to the client. It enable the AuthenticationService to easily interact with the server authentication plugin.
-		config->addPlugin(new Stormancer::AuthenticationPlugin());
-		config->addPlugin(new Stormancer::GameSessionPluginP2P());
-		return config;
+			//Adds the auth plugin to the client. It enable the AuthenticationService to easily interact with the server authentication plugin.
+			config->addPlugin(new Stormancer::AuthenticationPlugin());
+			config->addPlugin(new Stormancer::GameSessionPluginP2P());
+			return config;
 		});
-	}
 
+		this->Init(id);
+	}
 
 	//Starts a server that connect to the support scene using an opaque connection process passed on server startup
 	pplx::task<void> ServerDCS::RunServer(

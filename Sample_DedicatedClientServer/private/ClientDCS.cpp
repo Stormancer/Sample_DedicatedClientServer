@@ -65,10 +65,6 @@ namespace SampleDCS {
 
 	}*/
 	ClientDCS::ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
-		: ClientBaseDCS(id, endPoint, accountID, applicationName, maxPeers)
-	{}
-
-	void ClientDCS::SetConfig(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
 	{
 		Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName]() {
 			//std::shared_ptr<Stormancer::ConsoleLogger> logger = std::make_shared<Stormancer::ConsoleLogger>();
@@ -85,8 +81,9 @@ namespace SampleDCS {
 			config->addPlugin(new Stormancer::GameSessionPluginP2P());
 			return config;
 		});
-	}
 
+		this->Init(id);
+	}
 
 	pplx::task<void> ClientDCS::RunClient(std::string& ticket)
 	{
@@ -126,8 +123,10 @@ namespace SampleDCS {
 		/**
 			Throw errors if the client doesn't launch run client
 		*/
-		auto result = _client->getPrivateScene("locator").then([this, mapId](Stormancer::Scene_ptr locator)
-		{	
+		_logger->log(Stormancer::LogLevel::Error, "Error", "ConnectMap");
+		auto auth = _client->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
+		auto result = auth->getPrivateScene("locator").then([this, mapId](Stormancer::Scene_ptr locator)
+		{
 			// Get Game Session
 			OnConnectionStatusChange((int)ConnectionStatus::FindingGameSession);
 			return locator->dependencyResolver()->resolve<Stormancer::RpcService>()->rpc<std::string, std::string>("locator.getshard", mapId);
@@ -167,9 +166,18 @@ namespace SampleDCS {
 			OnConnectionStatusChange((int)ConnectionStatus::Connecting);
 			_logger->log(Stormancer::LogLevel::Info, "startup", "obtaining connection information to dedicated server");
 			return peer->openP2PTunnel(Stormancer::P2P_SERVER_ID);// 
-		}).then([this, mapId](std::shared_ptr<Stormancer::P2PTunnel> t)
+		}).then([this, mapId](pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> task)
 		{
-			return Endpoint{ t->ip,t->port };
+			try
+			{
+				auto t = task.get();
+				return Endpoint{ t->ip,t->port };
+			}
+			catch (const std::exception& ex)
+			{
+				_logger->log(Stormancer::LogLevel::Error, "Error", ex.what());
+				return Endpoint{ "",0};
+			}
 		});
 
 		return Stormancer::Task<SampleDCS::Endpoint>::create(std::move(result), _logger, _actionDispatcher);
