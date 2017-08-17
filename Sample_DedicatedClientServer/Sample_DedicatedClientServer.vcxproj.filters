@@ -42,13 +42,13 @@
     <ClInclude Include="online\GameSessionPluginP2P.h">
       <Filter>Fichiers d%27en-tête\Plugins</Filter>
     </ClInclude>
-    <ClInclude Include="public\DedicatedServerModule.h">
+    <ClInclude Include="public\ClientDCS.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
-    <ClInclude Include="ClientBase.h">
+    <ClInclude Include="public\ClientBaseDCS.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
-    <ClInclude Include="Client.h">
+    <ClInclude Include="public\ServerDCS.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,22 +62,19 @@
     <ClCompile Include="online\GameSessionServiceP2P.cpp">
       <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
-    <ClCompile Include="Server.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="DedicatedServerModule.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationPlugin.cpp">
       <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
     <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationService.cpp">
       <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
-    <ClCompile Include="Client.cpp">
+    <ClCompile Include="private\ClientDCS.cpp">
       <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
-    <ClCompile Include="ClientBase.cpp">
+    <ClCompile Include="private\ClientBaseDCS.cpp">
+      <Filter>Fichiers sources\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\ServerDCS.cpp">
       <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
   </ItemGroup>

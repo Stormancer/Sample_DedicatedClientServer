@@ -1,7 +1,9 @@
 // ConsoleFrontend.cpp : Defines the entry point for the console application.
 //
 #include "stdafx.h"
-#include "DedicatedServerModule.h"
+#include "ClientDCS.h"
+#include "ServerDCS.h"
+#include "ClientBaseDCS.h"
 #include <memory>
 #include <stdlib.h>  
 #include <stdio.h>
@@ -11,6 +13,8 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+
+using namespace SampleDCS;
 
 int main(int argc, char *argv[])
 {		
@@ -28,7 +32,7 @@ int main(int argc, char *argv[])
 		}
 	
 	}
-	printf("Starting map %s \n", startingMap);
+	printf("Starting map %s \n", startingMap.c_str());
 
 	//Get connection token passed as environment variable when the Stormancer app starts the server (Plugins/GameSessions/GameSessionService.cs line 413)
 	auto err_no = _dupenv_s(&buffer, &len, "connectionToken");
@@ -43,38 +47,46 @@ int main(int argc, char *argv[])
 	
 	std::function<void(void)> shutdownServer = [&isRunning]() { isRunning = false; };
 	std::function<void(Endpoint)> startServer = [](Endpoint e) {};
-	std::shared_ptr<DedicatedServerModule> onlineModule;
+	
+	std::shared_ptr<ClientBaseDCS> ClientBaseDCS;
 	if (err_no || !len)//Failed to get connection token. We are a client.
 	{
-		onlineModule = std::make_shared<DedicatedServerModule>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);
-		onlineModule->updateConnectionStatus = [](int status) {};
+
+		std::shared_ptr<SampleDCS::ClientDCS> client = std::make_shared<ClientDCS>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);
+		ClientBaseDCS = client;
+		ClientBaseDCS->OnConnectionStatusChange = [](int status) {};
 
 		//Client
 		std::string randId = std::to_string(rand() % 1000);
-		onlineModule->startClient(randId, startingMap)->Then([](StormancerResult<Endpoint> e) {
-			auto logger = Stormancer::ILogger::instance();
-		
-			if (e.Success())
-			{			
-				logger->log(Stormancer::LogLevel::Debug, "ConsoleFrontEnd", "Client connection success", e.Get().host +" " + std::to_string(e.Get().port));
-			}
-			else
+		client->RunClient(randId).then([client, startingMap]()
+		{
+			client->ConnectToMap(startingMap)->Then([](StormancerResult<Endpoint> e) 
 			{
-				logger->log(Stormancer::LogLevel::Debug, "ConsoleFrontEnd", "Client connexion failed : ", e.Reason());
-			}		
+				auto logger = Stormancer::ILogger::instance();
+
+				if (e.Success())
+				{
+					logger->log(Stormancer::LogLevel::Debug, "ConsoleFrontEnd", "Client connection success", e.Get().host + " " + std::to_string(e.Get().port));
+				}
+				else
+				{
+					logger->log(Stormancer::LogLevel::Debug, "ConsoleFrontEnd", "Client connexion failed : ", e.Reason());
+				}
+			});
 		});
 
 	}
 	else
 	{
-		onlineModule = std::make_shared<DedicatedServerModule>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1000);
-		onlineModule->startServer(std::string(buffer), startServer, shutdownServer);
+		std::shared_ptr<ServerDCS> server = std::make_shared<ServerDCS>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1000);
+		ClientBaseDCS = server;
+		server->RunServer(std::string(buffer), startServer, shutdownServer);
 	}
 	
 	while (isRunning)
 	{
 		std::this_thread::sleep_for((std::chrono::milliseconds)10);
-		onlineModule->Tick();
+		ClientBaseDCS->Tick();
 	}
 	return 0;
 }
