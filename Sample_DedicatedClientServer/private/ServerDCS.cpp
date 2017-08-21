@@ -5,7 +5,8 @@
 #include "GameSessionPluginP2P.h"
 #include "IClientFactory.h"
 #include "Compatibility/pplxtasks_noexcept.h"
-
+#include "Authentication/AuthenticationService.h"
+#include "../online/GameSessionServiceP2P.h"
 
 
 namespace SampleDCS
@@ -35,21 +36,35 @@ namespace SampleDCS
 			config->addPlugin(new Stormancer::GameSessionPluginP2P());
 			return config;
 		});
+		
+		_stormancerClient = Stormancer::IClientFactory::GetClient(id);
+		_logger = _stormancerClient->dependencyResolver()->resolve<Stormancer::ILogger>();
+		_actionDispatcher = _stormancerClient->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
+	}
 
-		this->Init(id);
+	Task_ptr<void> ServerDCS::RunServer(std::string connectionToken, std::function<void(Endpoint)> onStartServerReceived, std::function<void()> onStopServerReceived)
+	{
+		
+		return Stormancer::Task<void>::create(_RunServer(connectionToken, onStartServerReceived, onStopServerReceived), _logger, _actionDispatcher);
+	}
+
+	void ServerDCS::Tick()
+	{
+		auto dispatcher = std::dynamic_pointer_cast<Stormancer::MainThreadActionDispatcher>(_actionDispatcher);
+		dispatcher->update((std::chrono::milliseconds)10);
 	}
 
 	//Starts a server that connect to the support scene using an opaque connection process passed on server startup
-	pplx::task<void> ServerDCS::RunServer(
+	pplx::task<void> ServerDCS::_RunServer(
 		std::string connectionToken,
 		std::function<void(Endpoint)>  onStartServerReceived,
 		std::function<void()> onStopServerReceived )
 	{
-		auto logger = _client->dependencyResolver()->resolve<Stormancer::ILogger>();
+		auto logger = _stormancerClient->dependencyResolver()->resolve<Stormancer::ILogger>();
 		logger->log(Stormancer::LogLevel::Info, "startup", "starting as server");
 
 
-		return _client->connectToPrivateScene(connectionToken).then([onStopServerReceived, onStartServerReceived, logger, this](Stormancer::Scene_ptr scene) {
+		return _stormancerClient->connectToPrivateScene(connectionToken).then([onStopServerReceived, onStartServerReceived, logger, this](Stormancer::Scene_ptr scene) {
 			auto tunnel = scene->registerP2PServer(Stormancer::P2P_SERVER_ID);
 			auto gameSession = scene->dependencyResolver()->resolve<Stormancer::GameSessionServiceP2P>();
 

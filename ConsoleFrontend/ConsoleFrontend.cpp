@@ -1,9 +1,8 @@
 // ConsoleFrontend.cpp : Defines the entry point for the console application.
 //
 #include "stdafx.h"
-#include "ClientDCS.h"
-#include "ServerDCS.h"
-#include "ClientBaseDCS.h"
+#include "IClientDCS.h"
+#include "IServerDCS.h"
 #include <memory>
 #include <stdlib.h>  
 #include <stdio.h>
@@ -48,24 +47,24 @@ int main(int argc, char *argv[])
 	std::function<void(void)> shutdownServer = [&isRunning]() { isRunning = false; };
 	std::function<void(Endpoint)> startServer = [](Endpoint e) {};
 	
-	std::shared_ptr<ClientBaseDCS> ClientBaseDCS;
+	std::shared_ptr<SampleDCS::IClientDCS> client;
+	std::shared_ptr<SampleDCS::IServerDCS> server;
 	if (err_no || !len)//Failed to get connection token. We are a client.
 	{
 
-		std::shared_ptr<SampleDCS::ClientDCS> client = std::make_shared<ClientDCS>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);		
-		ClientBaseDCS = client;
-		ClientBaseDCS->OnConnectionStatusChange = [](int status) {};
+		client = IClientDCS::MakeClientDCS(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1);		
+		client->OnConnectionStatusChange = [](int status) {};
 
 		//Client
 		std::string randId = std::to_string(rand() % 1000);
-		client->RunClient(randId).then([client, startingMap]()
+		client->RunClient(randId)->Then([client, startingMap](StormancerResult<void> res)
 		{
-			client->ConnectToMap(startingMap)->Then([](StormancerResult<Endpoint> e)
+			client->TravelToMap(startingMap)->Then([](StormancerResult<Endpoint> e)
 			{
 				auto logger = Stormancer::ILogger::instance();
 
 				if (e.Success())
-				{
+				{					
 					logger->log(Stormancer::LogLevel::Debug, "ConsoleFrontEnd", "Client connection success", e.Get().host + " " + std::to_string(e.Get().port));
 				}
 				else
@@ -74,19 +73,20 @@ int main(int argc, char *argv[])
 				}
 			});
 		});
-
 	}
 	else
 	{
-		std::shared_ptr<ServerDCS> server = std::make_shared<ServerDCS>(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1000);
-		ClientBaseDCS = server;
+		server = IServerDCS::MakeServerDCS(180, "http://127.0.0.1:8081/", "ue4dedicatedserveraccount", "ue4server", 1000);
 		server->RunServer(std::string(buffer), startServer, shutdownServer);
 	}
 	
 	while (isRunning)
 	{
 		std::this_thread::sleep_for((std::chrono::milliseconds)10);
-		ClientBaseDCS->Tick();
+		if (client == nullptr)
+			server->Tick();
+		else
+			client->Tick();
 	}
 	return 0;
 }

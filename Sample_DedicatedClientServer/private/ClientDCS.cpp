@@ -1,69 +1,15 @@
 #include "stdafx.h"
-
-#include "ClientDCS.h"
+#include "IClientDCS.h"
+#include "Authentication/AuthenticationService.h"
 #include "Authentication/AuthenticationPlugin.h"
 #include "GameSessionServiceP2P.h"
 #include "GameSessionPluginP2P.h"
 #include "IClientFactory.h"
 #include "Compatibility/pplxtasks_noexcept.h"
+#include "ClientDCS.h"
 
 namespace SampleDCS {
-	//#include "Public/DedicatedServerModule.h"
-	/**
-	Connexion de base (avec continuation)
-		1.On commence le programme via un run client
-		2.On on connect to map
 
-	Changement de mapt (avec continuation)
-		1.On delete le tunnel
-		2.On disconnect from map
-		3.On Connect to map
-	*/
-
-	/*Client::Client(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
-	{
-		//Get connection port passed as environment variable when the Stormancer app starts the server
-		size_t len = 256;
-		char* buffer = new char[256];
-		auto err_no = _dupenv_s(&buffer, &len, "P2Pport");
-
-		Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName, err_no, len, buffer]() {
-			//std::shared_ptr<Stormancer::ConsoleLogger> logger = std::make_shared<Stormancer::ConsoleLogger>();
-
-			auto config = Stormancer::Configuration::create(endPoint, accountID, applicationName);
-			config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();
-			config->maxPeers = maxPeers;
-			// Check if p2p port is set in var env
-			if ((err_no == 0) && (len > 0))
-			{
-				//Server
-				auto port = atoi(buffer);
-				config->p2pServerPort = port;
-				std::shared_ptr<Stormancer::FileLogger> logger = nullptr;
-				logger = std::make_shared<Stormancer::FileLogger>("D:/Workspace/Sample_DedicatedClientServer/server.txt", false);
-				config->logger = logger;
-			}
-			else
-			{
-				std::shared_ptr<Stormancer::ConsoleLogger> logger = nullptr;
-				//Client
-				//logger = std::make_shared<Stormancer::FileLogger>("server.txt", false);
-				logger = std::make_shared<Stormancer::ConsoleLogger>();
-				config->logger = logger;
-			}
-
-			//Adds the auth plugin to the client. It enable the AuthenticationService to easily interact with the server authentication plugin.
-			config->addPlugin(new Stormancer::AuthenticationPlugin());
-			config->addPlugin(new Stormancer::GameSessionPluginP2P());
-			return config;
-		});
-		SetConfig(id, endPoint, accountID, applicationName, maxPeers);
-
-		_client = Stormancer::IClientFactory::GetClient(id);
-		_actionDispatcher = _client->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
-		_logger = _client->dependencyResolver()->resolve<Stormancer::ILogger>();
-
-	}*/
 	ClientDCS::ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
 	{
 		Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName]() {
@@ -82,17 +28,35 @@ namespace SampleDCS {
 			return config;
 		});
 
-		this->Init(id);
+		_stormancerClient = Stormancer::IClientFactory::GetClient(id);
+		_logger = _stormancerClient->dependencyResolver()->resolve<Stormancer::ILogger>();
+		_actionDispatcher = _stormancerClient->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
 	}
 
-	pplx::task<void> ClientDCS::RunClient(std::string& ticket)
+	Task_ptr<void> ClientDCS::RunClient(std::string& ticket)
+	{
+		return Stormancer::Task<void>::create(_RunClient(ticket), _logger, _actionDispatcher);
+	}
+
+	Task_ptr<Endpoint> ClientDCS::TravelToMap(std::string mapID)
+	{
+		return Stormancer::Task<Endpoint>::create(_TravelToMap(mapID), _logger, _actionDispatcher);
+	}
+
+	void ClientDCS::Tick()
+	{
+		auto dispatcher = std::dynamic_pointer_cast<Stormancer::MainThreadActionDispatcher>(_actionDispatcher);
+		dispatcher->update((std::chrono::milliseconds)10);
+	}
+
+	pplx::task<void> ClientDCS::_RunClient(std::string& ticket)
 	{
 		_logger->log(Stormancer::LogLevel::Info, "startup", "starting as client");
 
-		//Try to authenticate to stormmancer app
+		//Try to authenticate to stormancer app
 		OnConnectionStatusChange((int)ConnectionStatus::Authenticating);
 
-		auto auth = _client->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
+		auto auth = _stormancerClient->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
 		//Login using the steam auth provider (if configured as "mockup", it accepts any ticket as genuine)
 		return auth->login(std::map<std::string, std::string>{ {"provider", "test"}, { "login", ticket } }).then([auth, this]()
 		{
@@ -107,36 +71,28 @@ namespace SampleDCS {
 			// Connecting to locator scene
 			return locator->connect();
 		});
-
 	}
 
-	pplx::task<void> ClientDCS::DisconnectFromMap()
-	{
-		_client->getPublicScene(_mapToken).then([this](Stormancer::Scene_ptr map)
-		{
-			return map->disconnect();
-		});
-	}
-
-	Task_ptr<Endpoint> ClientDCS::ConnectToMap(std::string mapId)
+	pplx::task<Endpoint> ClientDCS::_ConnectToMap(std::string mapID)
 	{
 		/**
-			Throw errors if the client doesn't launch run client
+		Throw errors if the client doesn't launch run client
 		*/
-		_logger->log(Stormancer::LogLevel::Error, "Error", "ConnectMap");
-		auto auth = _client->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
-		auto result = auth->getPrivateScene("locator").then([this, mapId](Stormancer::Scene_ptr locator)
+		auto auth = _stormancerClient->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
+
+		auto result = auth->getPrivateScene("locator").then([this, mapID](Stormancer::Scene_ptr locator)
 		{
 			// Get Game Session
+			_logger->log(Stormancer::LogLevel::Info, "startup", "Finding game session");
 			OnConnectionStatusChange((int)ConnectionStatus::FindingGameSession);
-			return locator->dependencyResolver()->resolve<Stormancer::RpcService>()->rpc<std::string, std::string>("locator.getshard", mapId);
+			return locator->dependencyResolver()->resolve<Stormancer::RpcService>()->rpc<std::string, std::string>("locator.getshard", mapID);
 
 		}).then([this](std::string token)
 		{
-			_mapToken = token;
 			// Connect to Game Session
+			_logger->log(Stormancer::LogLevel::Info, "startup", "ConnectingToGameSession");
 			OnConnectionStatusChange((int)ConnectionStatus::ConnectingToGameSession);
-			return _client->connectToPrivateScene(token);
+			return _stormancerClient->connectToPrivateScene(token);
 
 		}).then([this](Stormancer::Scene_ptr gameSessionScene)
 		{
@@ -156,6 +112,7 @@ namespace SampleDCS {
 			// Open P2P connection
 			OnConnectionStatusChange((int)ConnectionStatus::OpeningConnection);
 			auto gameSessionScene = std::get<0>(tuple);
+			currentMap = gameSessionScene;
 			auto p2pToken = std::get<1>(tuple);
 			_logger->log(Stormancer::LogLevel::Info, "startup", "testing connectivity with dedicated server");
 			return gameSessionScene->openP2PConnection(p2pToken);
@@ -166,20 +123,52 @@ namespace SampleDCS {
 			OnConnectionStatusChange((int)ConnectionStatus::Connecting);
 			_logger->log(Stormancer::LogLevel::Info, "startup", "obtaining connection information to dedicated server");
 			return peer->openP2PTunnel(Stormancer::P2P_SERVER_ID);// 
-		}).then([this, mapId](pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> task)
-		{
+		}).then([this, mapID](pplx::task<std::shared_ptr<Stormancer::P2PTunnel>> task)
+		{	
 			try
 			{
 				auto t = task.get();
-				return Endpoint{ t->ip,t->port };
+				_p2pTunnel = t;
+				return pplx::task_from_result(Endpoint{ t->ip,t->port });
 			}
 			catch (const std::exception& ex)
 			{
 				_logger->log(Stormancer::LogLevel::Error, "Error", ex.what());
-				return Endpoint{ "",0};
+				return pplx::task_from_result(Endpoint{ "",0 });
 			}
 		});
 
-		return Stormancer::Task<SampleDCS::Endpoint>::create(std::move(result), _logger, _actionDispatcher);
+		return result;	
 	}
+
+	pplx::task<void> ClientDCS::_DisconnectFromMap(std::string mapID)
+	{
+		auto auth = _stormancerClient->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
+		_logger->log(Stormancer::LogLevel::Info, "Info", "Disconnecting from map");
+		if (currentMap)
+		{
+			_logger->log(Stormancer::LogLevel::Info, "Info", "Disconnected from map: ", mapID);
+			return currentMap->disconnect();
+		}
+	
+		return pplx::task_from_result();
+	}
+
+	
+
+	pplx::task<SampleDCS::Endpoint> ClientDCS::_TravelToMap(std::string mapID)
+	{
+		_logger->log(Stormancer::LogLevel::Debug, "Travel", "Start travel");
+		auto result = _DisconnectFromMap(mapID).then([this, mapID]()
+			{
+				_logger->log(Stormancer::LogLevel::Debug, "Travel", "Connect to map");
+				return _ConnectToMap(mapID);
+			});
+
+		return result;
+		//return _ConnectToMap(mapID);
+	}
+
+	
+
 }

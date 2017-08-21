@@ -25,6 +25,9 @@
     <Filter Include="Fichiers sources\Private">
       <UniqueIdentifier>{8a2e242b-06e6-4e09-86f9-eabe11bf76bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Private">
+      <UniqueIdentifier>{f9fbf04b-c622-4a82-94fe-a832e1625777}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,14 +45,23 @@
     <ClInclude Include="online\GameSessionPluginP2P.h">
       <Filter>Fichiers d%27en-tête\Plugins</Filter>
     </ClInclude>
-    <ClInclude Include="public\ClientDCS.h">
+    <ClInclude Include="public\ConnectionStatus.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
     </ClInclude>
-    <ClInclude Include="public\ClientBaseDCS.h">
+    <ClInclude Include="public\Endpoint.h">
       <Filter>Fichiers d%27en-tête\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\IServerDCS.h">
+      <Filter>Fichiers d%27en-tête\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\IClientDCS.h">
+      <Filter>Fichiers d%27en-tête\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="private\ClientDCS.h">
+      <Filter>Fichiers d%27en-tête\Private</Filter>
     </ClInclude>
     <ClInclude Include="public\ServerDCS.h">
-      <Filter>Fichiers d%27en-tête\Public</Filter>
+      <Filter>Fichiers d%27en-tête\Private</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -68,13 +80,16 @@
     <ClCompile Include="$(StormancerPath)Plugins\Authentication\AuthenticationService.cpp">
       <Filter>Fichiers sources\Plugins</Filter>
     </ClCompile>
-    <ClCompile Include="private\ClientDCS.cpp">
-      <Filter>Fichiers sources\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="private\ClientBaseDCS.cpp">
-      <Filter>Fichiers sources\Private</Filter>
-    </ClCompile>
     <ClCompile Include="private\ServerDCS.cpp">
+      <Filter>Fichiers sources\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="public\IServerDCS.cpp">
+      <Filter>Fichiers sources\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\IClientDCS.cpp">
+      <Filter>Fichiers sources\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\ClientDCS.cpp">
       <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
   </ItemGroup>
