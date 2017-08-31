@@ -16,6 +16,11 @@ namespace SampleDCS {
 
 	std::shared_ptr<SampleDCS::IClientDCS> SampleDCS::IClientDCS::MakeClientDCS(size_t id, const std::string & endPoint, std::string accountID, std::string applicationName, int maxPeers)
 	{
+		//auto ptr = new SampleDCS::ClientDCS(id, endPoint, accountID, applicationName, maxPeers);
+		//auto sptr = std::shared_ptr<SampleDCS::ClientDCS>(ptr, [](SampleDCS::ClientDCS* ptr2) {
+		//	delete ptr2;
+		//});
+		//return sptr;
 		return std::make_shared<SampleDCS::ClientDCS>(SampleDCS::ClientDCS(id, endPoint, accountID, applicationName, maxPeers));
 	}
 

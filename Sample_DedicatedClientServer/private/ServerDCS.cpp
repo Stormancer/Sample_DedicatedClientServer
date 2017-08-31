@@ -28,7 +28,7 @@ namespace SampleDCS
 			auto port = atoi(buffer);
 			config->p2pServerPort = port;
 			std::shared_ptr<Stormancer::FileLogger> logger = nullptr;
-			logger = std::make_shared<Stormancer::FileLogger>("D:/Workspace/Sample_DedicatedClientServer/server.txt", false);
+			logger = std::make_shared<Stormancer::FileLogger>("server.txt", false);
 			config->logger = logger;
 
 			//Adds the auth plugin to the client. It enable the AuthenticationService to easily interact with the server authentication plugin.

@@ -59,13 +59,14 @@ int main(int argc, char *argv[])
 		std::string randId = std::to_string(rand() % 1000);
 		client->RunClient(randId)->Then([client, startingMap](StormancerResult<void> res)
 		{
-			client->TravelToMap(startingMap)->Then([](StormancerResult<Endpoint> e)
+			client->TravelToMap(startingMap)->Then([client](StormancerResult<Endpoint> e)
 			{
 				auto logger = Stormancer::ILogger::instance();
 
 				if (e.Success())
 				{					
 					logger->log(Stormancer::LogLevel::Debug, "ConsoleFrontEnd", "Client connection success", e.Get().host + " " + std::to_string(e.Get().port));
+					client->TravelToMap("MapID1");
 				}
 				else
 				{

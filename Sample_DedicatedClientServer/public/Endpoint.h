@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 namespace SampleDCS {
 	struct Endpoint
 	{

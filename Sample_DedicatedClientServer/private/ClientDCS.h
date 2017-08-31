@@ -23,6 +23,10 @@ namespace SampleDCS {
 		Task_ptr<void> RunClient(std::string& ticket) override;
 		Task_ptr<Endpoint> TravelToMap(std::string mapID) override;
 		void Tick() override;
+		int GetConnectionStatus() override;
+		void SetConnectionStatus(int status) override;		
+		void SetNextMap(std::string mapId) override;
+		std::string GetNextMap() override;
 
 	private:
 		
@@ -30,8 +34,7 @@ namespace SampleDCS {
 		pplx::task<void> _RunClient(std::string& ticket);
 		pplx::task<Endpoint> _TravelToMap(std::string mapID);
 		pplx::task<Endpoint> _ConnectToMap(std::string mapID);
-		pplx::task<void> _DisconnectFromMap(std::string mapID);
-
+		pplx::task<void> _DisconnectFromCurrentMap();
 		size_t _OnlineClientID;
 		std::shared_ptr<Stormancer::IActionDispatcher> _actionDispatcher;
 		std::shared_ptr<Stormancer::ILogger> _logger;
@@ -41,9 +44,7 @@ namespace SampleDCS {
 
 		ConnectionStatus _clientStatus;
 		std::shared_ptr<Stormancer::Client> _stormancerClient;
-		//std::vector<std::function<void(int)>> OnConnectionStatusChangeDelegate;
+
+		std::string nextMap;
 	};
 }
-
-
-

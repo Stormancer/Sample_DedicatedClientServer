@@ -169,11 +169,11 @@
     <ClInclude Include="online\GameSessionPluginP2P.h" />
     <ClInclude Include="online\GameSessionServiceP2P.h" />
     <ClInclude Include="private\ClientDCS.h" />
+    <ClInclude Include="private\ServerDCS.h" />
     <ClInclude Include="public\IClientDCS.h" />
     <ClInclude Include="public\ConnectionStatus.h" />
     <ClInclude Include="public\Endpoint.h" />
     <ClInclude Include="public\IServerDCS.h" />
-    <ClInclude Include="public\ServerDCS.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -184,8 +184,8 @@
     <ClCompile Include="online\GameSessionServiceP2P.cpp" />
     <ClCompile Include="private\IClientDCS.cpp" />
     <ClCompile Include="private\ClientDCS.cpp" />
+    <ClCompile Include="private\IServerDCS.cpp" />
     <ClCompile Include="private\ServerDCS.cpp" />
-    <ClCompile Include="public\IServerDCS.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

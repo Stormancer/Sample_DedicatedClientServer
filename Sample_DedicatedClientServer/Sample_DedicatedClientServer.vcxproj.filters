@@ -60,7 +60,7 @@
     <ClInclude Include="private\ClientDCS.h">
       <Filter>Fichiers d%27en-tête\Private</Filter>
     </ClInclude>
-    <ClInclude Include="public\ServerDCS.h">
+    <ClInclude Include="private\ServerDCS.h">
       <Filter>Fichiers d%27en-tête\Private</Filter>
     </ClInclude>
   </ItemGroup>
@@ -83,13 +83,13 @@
     <ClCompile Include="private\ServerDCS.cpp">
       <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
-    <ClCompile Include="public\IServerDCS.cpp">
-      <Filter>Fichiers sources\Private</Filter>
-    </ClCompile>
     <ClCompile Include="private\IClientDCS.cpp">
       <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
     <ClCompile Include="private\ClientDCS.cpp">
+      <Filter>Fichiers sources\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\IServerDCS.cpp">
       <Filter>Fichiers sources\Private</Filter>
     </ClCompile>
   </ItemGroup>
