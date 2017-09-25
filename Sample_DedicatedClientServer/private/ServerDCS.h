@@ -11,6 +11,8 @@ namespace SampleDCS {
 		
 		Task_ptr<void> RunServer(std::string connectionToken, std::function<void(Endpoint)> onStartServerReceived, std::function<void()> onStopServerReceived) override;
 
+		Task_ptr<void> UpdateShutdownMode(UpdateShutdownModeParameter param) override;
+
 		void Tick() override;
 
 		size_t _OnlineClientID;
@@ -21,5 +23,6 @@ namespace SampleDCS {
 		std::shared_ptr<Stormancer::IActionDispatcher> _actionDispatcher;
 		std::shared_ptr<Stormancer::ILogger> _logger;
 		std::shared_ptr<Stormancer::P2PTunnel> _p2pTunnel;
+		std::shared_ptr<Stormancer::Scene> _currentScene;
 	};
 }

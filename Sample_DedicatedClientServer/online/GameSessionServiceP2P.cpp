@@ -72,7 +72,7 @@ namespace Stormancer
 	{
 		return this->_users;
 	}
-
+	
 	void GameSessionServiceP2P::unsubscribeConnectedPlayersChanged(Action<SessionPlayerUpdateArg>::TIterator handle)
 	{
 		this->_onConnectedPlayersChanged.erase(handle);

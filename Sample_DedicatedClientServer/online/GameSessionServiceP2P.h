@@ -1,6 +1,7 @@
 #pragma once
 #include "headers.h"
 #include <stormancer.h>
+#include "IServerDCS.h"
 
 namespace Stormancer
 {
@@ -99,6 +100,8 @@ namespace Stormancer
 		pplx::task<std::string> waitServerReady(pplx::cancellation_token);
 
 		std::vector<SessionPlayer> GetConnectedPlayers();
+
+		pplx::task<void> UpdateShutdownMode(SampleDCS::UpdateShutdownModeParameter param);
 
 		std::function<void()> OnConnectedPlayerChanged(std::function<void(SessionPlayer, std::string)> callback);
 		void OnTunnelOpened(std::function<void(std::shared_ptr<Stormancer::P2PTunnel>)> callback);

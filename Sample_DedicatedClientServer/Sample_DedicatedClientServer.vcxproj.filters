@@ -63,6 +63,9 @@
     <ClInclude Include="private\ServerDCS.h">
       <Filter>Fichiers d%27en-tête\Private</Filter>
     </ClInclude>
+    <ClInclude Include="public\msgpack_define_DCS.h">
+      <Filter>Fichiers d%27en-tête\Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

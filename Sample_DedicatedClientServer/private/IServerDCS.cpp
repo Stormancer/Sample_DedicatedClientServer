@@ -6,3 +6,4 @@ std::shared_ptr<SampleDCS::IServerDCS> SampleDCS::IServerDCS::MakeServerDCS(size
 {
 	return std::make_shared<SampleDCS::ServerDCS>(SampleDCS::ServerDCS(id, endPoint, accountID, applicationName, maxPeers));
 }
+

@@ -44,8 +44,19 @@ namespace SampleDCS
 
 	Task_ptr<void> ServerDCS::RunServer(std::string connectionToken, std::function<void(Endpoint)> onStartServerReceived, std::function<void()> onStopServerReceived)
 	{
-		
 		return Stormancer::Task<void>::create(_RunServer(connectionToken, onStartServerReceived, onStopServerReceived), _logger, _actionDispatcher);
+	}
+
+	Task_ptr<void> ServerDCS::UpdateShutdownMode(UpdateShutdownModeParameter param)
+	{
+		if (_currentScene != nullptr)
+		{
+			std::shared_ptr<Stormancer::RpcService> rpcService = _currentScene->dependencyResolver()->resolve<Stormancer::RpcService>();
+			return Stormancer::Task<void>::create(rpcService->rpc<void, UpdateShutdownModeParameter>("gamesession.updateshutdownmode", param), _logger, _actionDispatcher);
+		}
+		else
+			return nullptr;
+
 	}
 
 	void ServerDCS::Tick()
@@ -65,6 +76,7 @@ namespace SampleDCS
 
 
 		return _stormancerClient->connectToPrivateScene(connectionToken).then([onStopServerReceived, onStartServerReceived, logger, this](Stormancer::Scene_ptr scene) {
+			_currentScene = scene;
 			auto tunnel = scene->registerP2PServer(Stormancer::P2P_SERVER_ID);
 			auto gameSession = scene->dependencyResolver()->resolve<Stormancer::GameSessionServiceP2P>();
 
