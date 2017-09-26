@@ -5,7 +5,13 @@ This project contains the online module code for the guide [Dedicated Server][0]
 # Build instructions
 You need the [Stormancer lib for cpp][3] to build the project. Clone it, then follow the instructions to build it. Otherwise, Download the libraries + include directory from the latest release.
 
-Once the Stormancer binaries available, modify Stormancer.props with your paths to the library, then build.
+Once the Stormancer binaries available, modify `Stormancer.props` with your paths to the library, then build.
+
+```XML
+  <PropertyGroup >
+    <StormancerPath>YOUR_STORMANCER_SDK_PATH</StormancerPath>
+    
+```
 
 [0]: http://docs.stormancer.com/Tutorials/Dedicated_Server
 [1]: https://github.com/Stormancer/Sample_DedicatedClientServer-ServerApp
