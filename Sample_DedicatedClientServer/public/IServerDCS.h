@@ -9,7 +9,7 @@ namespace SampleDCS {
 	enum class ShutdownMode:int
 	{
 		NoPlayerLeft,
-		SceneShutdown
+		KeepAlive
 	};
 
 	class UpdateShutdownModeParameter

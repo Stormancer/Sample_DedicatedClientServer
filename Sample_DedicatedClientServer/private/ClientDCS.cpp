@@ -176,8 +176,6 @@ namespace SampleDCS {
 		}
 	}
 
-	
-
 	pplx::task<SampleDCS::Endpoint> ClientDCS::_TravelToMap(std::string mapID)
 	{
 		_logger->log(Stormancer::LogLevel::Debug, "Travel", "Start travel"); 
