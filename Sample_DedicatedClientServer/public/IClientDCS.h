@@ -10,7 +10,7 @@ namespace SampleDCS {
 	class IClientDCS
 	{
 	public:
-		static std::shared_ptr<IClientDCS> MakeClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);		
+		static std::shared_ptr<IClientDCS> MakeClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers, const std::string& token = "");		
 	
 		virtual Task_ptr<void> RunClient(std::string& ticket) = 0;
 		virtual Task_ptr<Endpoint> TravelToMap(std::string mapID) = 0;

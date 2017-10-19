@@ -10,7 +10,7 @@
 
 namespace SampleDCS {
 
-	ClientDCS::ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers)
+	ClientDCS::ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers, std::string token)
 	{
 		Stormancer::IClientFactory::SetConfig(id, [endPoint, maxPeers, accountID, applicationName]() {
 			//std::shared_ptr<Stormancer::ConsoleLogger> logger = std::make_shared<Stormancer::ConsoleLogger>();
@@ -18,6 +18,7 @@ namespace SampleDCS {
 			auto config = Stormancer::Configuration::create(endPoint, accountID, applicationName);
 			config->actionDispatcher = std::make_shared<Stormancer::MainThreadActionDispatcher>();
 			config->maxPeers = maxPeers;
+			config->synchronisedClock = false;
 			std::shared_ptr<Stormancer::FileLogger> logger = nullptr;
 			logger = std::make_shared<Stormancer::FileLogger>("client.txt", false);
 			//logger = std::make_shared<Stormancer::ConsoleLogger>();
@@ -28,6 +29,7 @@ namespace SampleDCS {
 			return config;
 		});
 		
+		_token = token;
 		_stormancerClient = Stormancer::IClientFactory::GetClient(id);
 		_logger = _stormancerClient->dependencyResolver()->resolve<Stormancer::ILogger>();
 		_actionDispatcher = _stormancerClient->dependencyResolver()->resolve<Stormancer::IActionDispatcher>();
@@ -44,6 +46,8 @@ namespace SampleDCS {
 
 	Task_ptr<void> ClientDCS::RunClient(std::string& ticket)
 	{
+		if(_token.length()>0)
+			return Stormancer::Task<void>::create(_RunClientFromLauncher(), _logger, _actionDispatcher);
 		return Stormancer::Task<void>::create(_RunClient(ticket), _logger, _actionDispatcher);
 	}
 
@@ -75,8 +79,39 @@ namespace SampleDCS {
 		OnConnectionStatusChange((int)ConnectionStatus::Authenticating);
 
 		auto auth = _stormancerClient->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
+		if(_token.length()>0)
+			auth->setConnectionToken(_token);
 		//Login using the steam auth provider (if configured as "mockup", it accepts any ticket as genuine)
 		return auth->login(std::map<std::string, std::string>{ {"provider", "test"}, { "login", ticket } }).then([auth, this]()
+		{
+			//Find locator
+			OnConnectionStatusChange((int)ConnectionStatus::FindLocator);
+			//Authorize access to the locator private scene and return it.
+			return auth->getPrivateScene("locator");
+
+		}).then([this](Stormancer::Scene_ptr locator)
+		{
+			OnConnectionStatusChange((int)ConnectionStatus::ConnectingLocator);
+			// Connecting to locator scene
+			return locator->connect();
+		});
+	}
+
+	pplx::task<void> ClientDCS::_RunClientFromLauncher()
+	{
+		_logger->log(Stormancer::LogLevel::Info, "startup", "starting as client from launcher");
+
+		//Try to authenticate to stormancer app
+		OnConnectionStatusChange((int)ConnectionStatus::Authenticating);
+
+		auto auth = _stormancerClient->dependencyResolver()->resolve<Stormancer::AuthenticationService>();
+
+		_logger->log(Stormancer::LogLevel::Info, "startup", "Auth resolved");
+		auth->setConnectionToken(_token);
+
+		_logger->log(Stormancer::LogLevel::Info, "startup", "connectionToken Set");
+		//Login using the steam auth provider (if configured as "mockup", it accepts any ticket as genuine)
+		return auth->login(std::map<std::string, std::string>{ {"provider", "launcher"}}).then([auth, this]()
 		{
 			//Find locator
 			OnConnectionStatusChange((int)ConnectionStatus::FindLocator);

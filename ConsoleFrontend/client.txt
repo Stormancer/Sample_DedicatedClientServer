@@ -1,0 +1,155 @@
+[2017-10-13T11:24:06Z] [Trace] [Client] Creating the client...
+[2017-10-13T11:24:06Z] [Trace] [Client] Client created
+[2017-10-13T11:24:06Z] [Trace] [Client] Initializing client...
+[2017-10-13T11:24:06Z] [Trace] [Client] Client initialized
+[2017-10-13T11:24:06Z] [Info ] [startup] starting as client
+[2017-10-13T11:24:06Z] [Info ] [login] Start login
+[2017-10-13T11:24:06Z] [Info ] [login] Get AuthenticationScene
+[2017-10-13T11:24:06Z] [Info ] [GetAuthenticationScene] Client is ok
+[2017-10-13T11:24:06Z] [Info ] [GetAuthenticationScene] Connecting to public scene
+[2017-10-13T11:24:06Z] [Trace] [Client] Get public scene. [authenticator]
+[2017-10-13T11:24:06Z] [Trace] [ApiClient] Scene endpoint data [ue4dedicatedserveraccount;ue4server;authenticator]
+[2017-10-13T11:24:06Z] [Info ] [GetAuthenticationScene] Auth set
+[2017-10-13T11:24:06Z] [Trace] [ApiClient] HTTP request on 'http://127.0.0.1:8081/' returned status code 200
+[2017-10-13T11:24:06Z] [Trace] [ApiClient] Response ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGWndW5rbm93bqxEZXBsb3ltZW50SWS2T1gxNVdjb2p4a3FzVVRNMEdFRXBpQalFbmRwb2ludHODpnJha25ldK8xMjcuMC4wLjE6MzAwMDCpd2Vic29ja2V0tHdzOi8vbG9jYWxob3N0OjYxMDAwqWRlbGVnYXRlZKlsb2NhbGhvc3SqRXhwaXJhdGlvbtNI1RIc2ek0UKZJc3N1ZWTTSNUSHCcY1lCnUm91dGluZ8CnU2NlbmVJZK1hdXRoZW50aWNhdG9yqFVzZXJEYXRhxACnVmVyc2lvbgE=-kzaQhzjofSOaLSUYnLHyhBir0U4TJpIF2u61/t7+4m8="]
+[2017-10-13T11:24:06Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server unknown OX15WcojxkqsUTM0GEEpiA 3 5248120855894504528 5248120852894504528  authenticator  1
+[2017-10-13T11:24:06Z] [Trace] [Client] Get scene authenticator [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGWndW5rbm93bqxEZXBsb3ltZW50SWS2T1gxNVdjb2p4a3FzVVRNMEdFRXBpQalFbmRwb2ludHODpnJha25ldK8xMjcuMC4wLjE6MzAwMDCpd2Vic29ja2V0tHdzOi8vbG9jYWxob3N0OjYxMDAwqWRlbGVnYXRlZKlsb2NhbGhvc3SqRXhwaXJhdGlvbtNI1RIc2ek0UKZJc3N1ZWTTSNUSHCcY1lCnUm91dGluZ8CnU2NlbmVJZK1hdXRoZW50aWNhdG9yqFVzZXJEYXRhxACnVmVyc2lvbgE=-kzaQhzjofSOaLSUYnLHyhBir0U4TJpIF2u61/t7+4m8=]
+[2017-10-13T11:24:06Z] [Trace] [Client] Starting transport [port:0; maxPeers:2]
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-10-13T11:24:06Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30000]
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30000]
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] 127.0.0.1:30000 connected
+[2017-10-13T11:24:06Z] [Info ] [P2P] Adding connection 127.0.0.1:30000 [0]
+[2017-10-13T11:24:06Z] [Trace] [Client] Update server metadata
+SEND ID_SYSTEM_REQUEST 1MESSAGE_ID : 0
+[2017-10-13T11:24:06Z] [Trace] [RakNetTransport] Connection ID received [1441793]
+ID_REQUEST_RESPONSE_COMPLETE 1
+[2017-10-13T11:24:06Z] [Trace] [Client] Send SceneInfosRequestDto
+SEND ID_SYSTEM_REQUEST 2MESSAGE_ID : 136
+ID_REQUEST_RESPONSE_MSG 2
+ID_REQUEST_RESPONSE_COMPLETE 2
+[2017-10-13T11:24:06Z] [Trace] [Client] SceneInfosDto received [authenticator msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:login;5:sceneauthorization.gettoken;] Metadata:[stormancer.plugins.rpc:1.1.0;]]
+[2017-10-13T11:24:06Z] [Trace] [Client] Update server metadata
+SEND ID_SYSTEM_REQUEST 3MESSAGE_ID : 0
+ID_REQUEST_RESPONSE_COMPLETE 3
+[2017-10-13T11:24:06Z] [Trace] [Client] Return the scene [authenticator]
+SEND ID_SYSTEM_REQUEST 4MESSAGE_ID : 134
+ID_REQUEST_RESPONSE_MSG 4
+ID_REQUEST_RESPONSE_COMPLETE 4
+[2017-10-13T11:24:06Z] [Debug] [client] Scene connected. [authenticator]
+[2017-10-13T11:24:06Z] [Info ] [GetAuthenticationScene] Connected to authentication scene
+[2017-10-13T11:24:06Z] [Info ] [login] send login rpc
+[2017-10-13T11:24:07Z] [Info ] [login] Receive rpc
+[2017-10-13T11:24:07Z] [Info ] [GetAuthenticationScene] Client is ok
+[2017-10-13T11:24:07Z] [Info ] [GetAuthenticationScene] Connecting to public scene
+[2017-10-13T11:24:07Z] [Trace] [Client] Get public scene. [authenticator]
+[2017-10-13T11:24:07Z] [Info ] [GetAuthenticationScene] Auth set
+[2017-10-13T11:24:07Z] [Info ] [GetAuthenticationScene] Connected to authentication scene
+[2017-10-13T11:24:07Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZPWDE1V2NvanhrcXNVVE0wR0VFcGlBqUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jVEhzaHIiVpklzc3VlZNNI1RIcJ0wqladSb3V0aW5nwKdTY2VuZUlkp2xvY2F0b3KoVXNlckRhdGHEAKdWZXJzaW9uAQ==-Lx4LLpF46QqdDDkhVg1PD7mJJ9GPSFmuzseBDFMgkOU="]
+[2017-10-13T11:24:07Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream OX15WcojxkqsUTM0GEEpiA 3 5248120855897868437 5248120852897868437  locator  1
+[2017-10-13T11:24:07Z] [Trace] [Client] Get scene locator [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZPWDE1V2NvanhrcXNVVE0wR0VFcGlBqUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jVEhzaHIiVpklzc3VlZNNI1RIcJ0wqladSb3V0aW5nwKdTY2VuZUlkp2xvY2F0b3KoVXNlckRhdGHEAKdWZXJzaW9uAQ==-Lx4LLpF46QqdDDkhVg1PD7mJJ9GPSFmuzseBDFMgkOU=]
+[2017-10-13T11:24:07Z] [Trace] [Client] Send SceneInfosRequestDto
+SEND ID_SYSTEM_REQUEST 5MESSAGE_ID : 136
+ID_REQUEST_RESPONSE_MSG 5
+ID_REQUEST_RESPONSE_COMPLETE 5
+[2017-10-13T11:24:07Z] [Trace] [Client] SceneInfosDto received [locator msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:locator.getshard;] Metadata:[sample.locator:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-10-13T11:24:07Z] [Trace] [Client] Update server metadata
+SEND ID_SYSTEM_REQUEST 6MESSAGE_ID : 0
+ID_REQUEST_RESPONSE_COMPLETE 6
+[2017-10-13T11:24:07Z] [Trace] [Client] Return the scene [locator]
+SEND ID_SYSTEM_REQUEST 7MESSAGE_ID : 134
+ID_REQUEST_RESPONSE_MSG 7
+ID_REQUEST_RESPONSE_COMPLETE 7
+[2017-10-13T11:24:07Z] [Debug] [client] Scene connected. [locator]
+[2017-10-13T11:24:07Z] [Debug] [Travel] Start travel
+[2017-10-13T11:24:07Z] [Info ] [Error] Can't disconnect because current map is not set
+[2017-10-13T11:24:07Z] [Debug] [Travel] Connect to map
+[2017-10-13T11:24:07Z] [Trace] [Debug] Start to connect to map
+[2017-10-13T11:25:00Z] [Info ] [GetAuthenticationScene] Client is ok
+[2017-10-13T11:25:00Z] [Info ] [GetAuthenticationScene] Connecting to public scene
+[2017-10-13T11:25:00Z] [Trace] [Client] Get public scene. [authenticator]
+[2017-10-13T11:25:00Z] [Info ] [GetAuthenticationScene] Auth set
+[2017-10-13T11:25:00Z] [Info ] [GetAuthenticationScene] Connected to authentication scene
+[2017-10-13T11:25:16Z] [Trace] [Client] Creating the client...
+[2017-10-13T11:25:16Z] [Trace] [Client] Client created
+[2017-10-13T11:25:16Z] [Trace] [Client] Initializing client...
+[2017-10-13T11:25:16Z] [Trace] [Client] Client initialized
+[2017-10-13T11:25:16Z] [Info ] [startup] starting as client
+[2017-10-13T11:25:16Z] [Info ] [login] Start login
+[2017-10-13T11:25:16Z] [Info ] [login] Get AuthenticationScene
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Client is ok
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Connecting to public scene
+[2017-10-13T11:25:16Z] [Trace] [Client] Get public scene. [authenticator]
+[2017-10-13T11:25:16Z] [Trace] [ApiClient] Scene endpoint data [ue4dedicatedserveraccount;ue4server;authenticator]
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Auth set
+[2017-10-13T11:25:16Z] [Trace] [ApiClient] HTTP request on 'http://127.0.0.1:8081/' returned status code 200
+[2017-10-13T11:25:16Z] [Trace] [ApiClient] Response ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGWndW5rbm93bqxEZXBsb3ltZW50SWS2T1gxNVdjb2p4a3FzVVRNMEdFRXBpQalFbmRwb2ludHODpnJha25ldK8xMjcuMC4wLjE6MzAwMDCpd2Vic29ja2V0tHdzOi8vbG9jYWxob3N0OjYxMDAwqWRlbGVnYXRlZKlsb2NhbGhvc3SqRXhwaXJhdGlvbtNI1RIdA6K6v6ZJc3N1ZWTTSNUSHFDSXL+nUm91dGluZ8CnU2NlbmVJZK1hdXRoZW50aWNhdG9yqFVzZXJEYXRhxACnVmVyc2lvbgE=-dZUlUqUZPlFR65hX5koEymejyIFjwjTD1xS/J5uEEvY="]
+[2017-10-13T11:25:16Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server unknown OX15WcojxkqsUTM0GEEpiA 3 5248120856594528959 5248120853594528959  authenticator  1
+[2017-10-13T11:25:16Z] [Trace] [Client] Get scene authenticator [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGWndW5rbm93bqxEZXBsb3ltZW50SWS2T1gxNVdjb2p4a3FzVVRNMEdFRXBpQalFbmRwb2ludHODpnJha25ldK8xMjcuMC4wLjE6MzAwMDCpd2Vic29ja2V0tHdzOi8vbG9jYWxob3N0OjYxMDAwqWRlbGVnYXRlZKlsb2NhbGhvc3SqRXhwaXJhdGlvbtNI1RIdA6K6v6ZJc3N1ZWTTSNUSHFDSXL+nUm91dGluZ8CnU2NlbmVJZK1hdXRoZW50aWNhdG9yqFVzZXJEYXRhxACnVmVyc2lvbgE=-dZUlUqUZPlFR65hX5koEymejyIFjwjTD1xS/J5uEEvY=]
+[2017-10-13T11:25:16Z] [Trace] [Client] Starting transport [port:0; maxPeers:2]
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] Starting RakNet transport...
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] Initializing raknet transport [client]
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] Raknet transport initialized [client]
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] RakNet transport started
+[2017-10-13T11:25:16Z] [Trace] [Client] Connecting transport to server [127.0.0.1:30000]
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] Connection request accepted [127.0.0.1:30000]
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] 127.0.0.1:30000 connected
+[2017-10-13T11:25:16Z] [Info ] [P2P] Adding connection 127.0.0.1:30000 [0]
+[2017-10-13T11:25:16Z] [Trace] [Client] Update server metadata
+SEND ID_SYSTEM_REQUEST 1MESSAGE_ID : 0
+[2017-10-13T11:25:16Z] [Trace] [RakNetTransport] Connection ID received [1507329]
+ID_REQUEST_RESPONSE_COMPLETE 1
+[2017-10-13T11:25:16Z] [Trace] [Client] Send SceneInfosRequestDto
+SEND ID_SYSTEM_REQUEST 2MESSAGE_ID : 136
+ID_REQUEST_RESPONSE_MSG 2
+ID_REQUEST_RESPONSE_COMPLETE 2
+[2017-10-13T11:25:16Z] [Trace] [Client] SceneInfosDto received [authenticator msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:login;5:sceneauthorization.gettoken;] Metadata:[stormancer.plugins.rpc:1.1.0;]]
+[2017-10-13T11:25:16Z] [Trace] [Client] Update server metadata
+SEND ID_SYSTEM_REQUEST 3MESSAGE_ID : 0
+ID_REQUEST_RESPONSE_COMPLETE 3
+[2017-10-13T11:25:16Z] [Trace] [Client] Return the scene [authenticator]
+SEND ID_SYSTEM_REQUEST 4MESSAGE_ID : 134
+ID_REQUEST_RESPONSE_MSG 4
+[2017-10-13T11:25:16Z] [Debug] [client] Scene connected. [authenticator]
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Connected to authentication scene
+[2017-10-13T11:25:16Z] [Info ] [login] send login rpc
+ID_REQUEST_RESPONSE_COMPLETE 4
+[2017-10-13T11:25:16Z] [Info ] [login] Receive rpc
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Client is ok
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Connecting to public scene
+[2017-10-13T11:25:16Z] [Trace] [Client] Get public scene. [authenticator]
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Auth set
+[2017-10-13T11:25:16Z] [Info ] [GetAuthenticationScene] Connected to authentication scene
+[2017-10-13T11:25:16Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZPWDE1V2NvanhrcXNVVE0wR0VFcGlBqUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jVEh0Dxq7rpklzc3VlZNNI1RIcUPZQ66dSb3V0aW5nwKdTY2VuZUlkp2xvY2F0b3KoVXNlckRhdGHEAKdWZXJzaW9uAQ==-j/iJIVtYEt3YV6fDBbPHvKV/t5MdK4aX2zbK86OWjyM="]
+[2017-10-13T11:25:16Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream OX15WcojxkqsUTM0GEEpiA 3 5248120856596885227 5248120853596885227  locator  1
+[2017-10-13T11:25:16Z] [Trace] [Client] Get scene locator [i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZPWDE1V2NvanhrcXNVVE0wR0VFcGlBqUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMal3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jVEh0Dxq7rpklzc3VlZNNI1RIcUPZQ66dSb3V0aW5nwKdTY2VuZUlkp2xvY2F0b3KoVXNlckRhdGHEAKdWZXJzaW9uAQ==-j/iJIVtYEt3YV6fDBbPHvKV/t5MdK4aX2zbK86OWjyM=]
+[2017-10-13T11:25:16Z] [Trace] [Client] Send SceneInfosRequestDto
+SEND ID_SYSTEM_REQUEST 5MESSAGE_ID : 136
+ID_REQUEST_RESPONSE_MSG 5
+ID_REQUEST_RESPONSE_COMPLETE 5
+[2017-10-13T11:25:17Z] [Trace] [Client] SceneInfosDto received [locator msgpack/array Routes:[0:stormancer.rpc.next;1:stormancer.rpc.cancel;2:stormancer.rpc.error;3:stormancer.rpc.completed;4:locator.getshard;] Metadata:[sample.locator:enabled;stormancer.plugins.rpc:1.1.0;]]
+[2017-10-13T11:25:17Z] [Trace] [Client] Update server metadata
+SEND ID_SYSTEM_REQUEST 6MESSAGE_ID : 0
+ID_REQUEST_RESPONSE_COMPLETE 6
+[2017-10-13T11:25:17Z] [Trace] [Client] Return the scene [locator]
+SEND ID_SYSTEM_REQUEST 7MESSAGE_ID : 134
+ID_REQUEST_RESPONSE_MSG 7
+ID_REQUEST_RESPONSE_COMPLETE 7
+[2017-10-13T11:25:17Z] [Debug] [client] Scene connected. [locator]
+[2017-10-13T11:25:17Z] [Debug] [Travel] Start travel
+[2017-10-13T11:25:17Z] [Info ] [Error] Can't disconnect because current map is not set
+[2017-10-13T11:25:17Z] [Debug] [Travel] Connect to map
+[2017-10-13T11:25:17Z] [Trace] [Debug] Start to connect to map
+[2017-10-13T11:25:17Z] [Info ] [GetAuthenticationScene] Client is ok
+[2017-10-13T11:25:17Z] [Info ] [GetAuthenticationScene] Connecting to public scene
+[2017-10-13T11:25:17Z] [Trace] [Client] Get public scene. [authenticator]
+[2017-10-13T11:25:17Z] [Info ] [GetAuthenticationScene] Auth set
+[2017-10-13T11:25:17Z] [Info ] [GetAuthenticationScene] Connected to authentication scene
+[2017-10-13T11:25:17Z] [Trace] [Client] Get private scene. ["i6lBY2NvdW50SWS5dWU0ZGVkaWNhdGVkc2VydmVyYWNjb3VudKtBcHBsaWNhdGlvbql1ZTRzZXJ2ZXKrQ29udGVudFR5cGW4YXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtrERlcGxveW1lbnRJZLZPWDE1V2NvanhrcXNVVE0wR0VFcGlBqUVuZHBvaW50c4OmcmFrbmV0rzEyNy4wLjAuMTozMDAwMKl3ZWJzb2NrZXS0d3M6Ly9sb2NhbGhvc3Q6NjEwMDCpZGVsZWdhdGVkqWxvY2FsaG9zdKpFeHBpcmF0aW9u00jVEh0D3ts7pklzc3VlZNNI1RIcUQ59O6dSb3V0aW5nwKdTY2VuZUlkp2xvY2F0b3KoVXNlckRhdGHEAKdWZXJzaW9uAQ==-e4fNz6ZAl7EmFiTyE72JoyVEICuP+3ffHSSBaLcR9qo="]
+[2017-10-13T11:25:17Z] [Trace] [TokenHandler] Decoded token : ue4dedicatedserveraccount ue4server application/octet-stream OX15WcojxkqsUTM0GEEpiA 3 5248120856598469435 5248120853598469435  locator  1
+[2017-10-13T11:25:17Z] [Info ] [startup] Finding game session
+[2017-10-13T11:25:17Z] [Trace] [RpcHelpers] An exception occurred during the rpc locator.getshard
+[2017-10-13T11:25:17Z] [Error] [Error] An exception occurred on the server. Error 7db0ac5a41b24ef995cfa5b4e74015e2.

@@ -17,7 +17,7 @@ namespace SampleDCS {
 	class ClientDCS : public IClientDCS
 	{	
 	public:
-		ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers);
+		ClientDCS(size_t id, const std::string& endPoint, std::string accountID, std::string applicationName, int maxPeers, std::string token = "");
 		
 		// IClientImplementation
 		Task_ptr<void> RunClient(std::string& ticket) override;
@@ -32,6 +32,7 @@ namespace SampleDCS {
 		
 		void Init(size_t id);
 		pplx::task<void> _RunClient(std::string& ticket);
+		pplx::task<void> _RunClientFromLauncher();
 		pplx::task<Endpoint> _TravelToMap(std::string mapID);
 		pplx::task<Endpoint> _ConnectToMap(std::string mapID);
 		pplx::task<void> _DisconnectFromCurrentMap();
@@ -41,6 +42,7 @@ namespace SampleDCS {
 		std::shared_ptr<Stormancer::P2PTunnel> _p2pTunnel;
 
 		Stormancer::Scene_ptr currentMap;
+		std::string _token;
 
 		ConnectionStatus _clientStatus;
 		std::shared_ptr<Stormancer::Client> _stormancerClient;
